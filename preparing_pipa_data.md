@@ -17,7 +17,8 @@ make
 make install
 ```
 ## Run on the radseq
+Reads seem pretty good (not trimmed using `-t 75`)
 ```
 export LD_LIBRARY_PATH=/home/caroline/programs/gcc-6.2.0/lib64
-/home/caroline/programs/stacks-1.45/bin/process_radtags -f /4/caroline/1016_S2_L002_R1_001.fastq.gz -b /4/caroline/Pipa_parva/Rad_seq/demultiplex/demutiplex_barcode -o /4/caroline/Pipa_parva/Rad_seq/demultiplex/ -e sbfI -t 75 -r -c -q --filter_illumina
+/home/caroline/programs/stacks-1.45/bin/process_radtags -f /4/caroline/1016_S2_L002_R1_001.fastq.gz -b /4/caroline/Pipa_parva/Rad_seq/demultiplex/demutiplex_barcode -o /4/caroline/Pipa_parva/Rad_seq/demultiplex/ -e sbfI -r -c -q --filter_illumina
 ```
