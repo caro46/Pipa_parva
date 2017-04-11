@@ -17,8 +17,35 @@ make
 make install
 ```
 ## Run on the radseq
-Reads seem pretty good (not trimmed using `-t 75` but will do trimmomatic after to remove bad quality reads and contaminated sequences)
+Reads seem pretty good (trimmed using `-t 75` but will do trimmomatic after to remove bad quality reads and contaminated sequences)
 ```
 export LD_LIBRARY_PATH=/home/caroline/programs/gcc-6.2.0/lib64
-/home/caroline/programs/stacks-1.45/bin/process_radtags -f /4/caroline/1016_S2_L002_R1_001.fastq.gz -b /4/caroline/Pipa_parva/Rad_seq/demultiplex/demutiplex_barcode -o /4/caroline/Pipa_parva/Rad_seq/demultiplex/ -e sbfI -r -c -q --filter_illumina
+/home/caroline/programs/stacks-1.45/bin/process_radtags -f /4/caroline/1016_S2_L002_R1_001.fastq.gz -b /4/caroline/Pipa_parva/Rad_seq/demultiplex/demutiplex_barcode -o /4/caroline/Pipa_parva/Rad_seq/demultiplex/ -e sbfI -r -c -q --filter_illumina -t 75
+```
+```
+Outputing details to log: '/4/caroline/Pipa_parva/Rad_seq/demultiplex/process_radtags.caroline.log'
+
+411680905 total sequences
+        0 failed Illumina filtered reads (0.0%)
+ 52662332 ambiguous barcode drops (12.8%)
+   270448 low quality read drops (0.1%)
+  4709566 ambiguous RAD-Tag drops (1.1%)
+354038559 retained reads (86.0%)
+```
+Checking the size of the files after demultiplexing, pretty small for the parents...
+```
+#!/usr/bin/perl
+use warnings;
+use strict;
+
+# This script will run trimmomatic on SE radtag reads   
+
+my $status;
+my $commandline;
+@files = glob("*.fastq");
+
+foreach(@files){
+	$commandline = "java -jar /usr/local/trimmomatic/trimmomatic-0.33.jar SE -trimlog ".$_."txt ".$_." ".$_."single.fastq.gz ILLUMINACLIP:/home/caroline/programs/Trimmomatic-0.32/adapters/RADseq_repeats_seq_Pipa_Laevis.fa:2:30:10 SLIDINGWINDOW:4:15 MINLEN:36";
+	$status = system($commandline);
+}
 ```
