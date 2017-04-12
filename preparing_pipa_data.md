@@ -42,7 +42,7 @@ Outputing details to log: '/4/caroline/Pipa_parva/Rad_seq/demultiplex/process_ra
 354184972 retained reads (86.0%)
 ```
 Checking the size of the files after demultiplexing, pretty small for the parents...
-```
+```perl
 #!/usr/bin/perl
 
 use warnings;
@@ -65,7 +65,7 @@ foreach(@files){
 }
 
 for($x =0; $x <= $#files_no_extension; $x ++){
-        $commandline = "java -jar /usr/local/trimmomatic/trimmomatic-0.36.jar SE -trimlog ".$_."_log.txt ".$files_no_extension[$x].".fq.gz ".$files_no_extension[$x]."_single.fastq.gz ILLUMINACLIP:/home/caroline/programs/Trimmomatic-0.32/adapters/RADseq_repeats_seq_Pipa_Laevis.fa:2:30:10 SLIDINGWINDOW:4:15 MINLEN:36";
+        $commandline = "java -jar /usr/local/trimmomatic/trimmomatic-0.36.jar SE -trimlog ".$files_no_extension[$x]."_log.txt ".$files_no_extension[$x].".fq.gz ".$files_no_extension[$x]."_single_trimmed.fastq.gz ILLUMINACLIP:/home/caroline/programs/adapters_TruSeq2_3_SE_repeats.fa:2:30:10 SLIDINGWINDOW:4:15 MINLEN:36";
         $status = system($commandline);
 }
 ```
