@@ -17,11 +17,14 @@ make
 make install
 ```
 ## Run on the radseq
-Reads seem pretty good (trimmed using `-t 75` but will do trimmomatic after to remove bad quality reads and contaminated sequences)
+Reads seem pretty good (trimmed using `-t 75` but will do trimmomatic after to remove bad quality reads and contaminated sequences).
+
+Need that each sample name in demultiplex_barcode is unique (ex. BJE4294_1 ...)
 ```
 export LD_LIBRARY_PATH=/home/caroline/programs/gcc-6.2.0/lib64
 /home/caroline/programs/stacks-1.45/bin/process_radtags -f /4/caroline/1016_S2_L002_R1_001.fastq.gz -b /4/caroline/Pipa_parva/Rad_seq/demultiplex/demutiplex_barcode -o /4/caroline/Pipa_parva/Rad_seq/demultiplex/ -e sbfI -r -c -q --filter_illumina -t 75
 ```
+Results of demultiplexing
 ```
 Processing single-end data.
 Using Phred+33 encoding for quality scores.
@@ -40,6 +43,42 @@ Outputing details to log: '/4/caroline/Pipa_parva/Rad_seq/demultiplex/process_ra
    124035 low quality read drops (0.0%)
   4709566 ambiguous RAD-Tag drops (1.1%)
 354184972 retained reads (86.0%)
+```
+Concatenate the different files for each *Pipa* sample
+```perl
+#!/usr/bin/perl 
+
+use warnings;
+use strict;
+
+my $path_to_data="/4/caroline/Pipa_parva/Rad_seq/demultiplex/";
+my @individuals=("BJE4294",
+"BJE4295",
+"BJE4296",
+"BJE4299",
+"BJE4300",
+"BJE4301",
+"BJE4302",
+"BJE4303",
+"BJE4304",
+"BJE4305",
+"BJE4306",
+"BJE4307",
+"BJE4308",
+"BJE4309");
+
+my $commandline;
+my $status;
+
+##Concatenate files for each individual after demultiplex 
+foreach my $individual (@individuals) {
+$commandline = "mkdir ".$path_to_data."\/".$individual;
+$status = system($commandline);
+$commandline = "zcat ".$path_to_data.$individual."_*.fq.gz | gzip \> ".$path_to_data."\/".$individual."\/".$individual.".fq.gz";
+$status = system($commandline);
+
+}
+
 ```
 Checking the size of the files after demultiplexing, pretty small for the parents...
 ```perl
