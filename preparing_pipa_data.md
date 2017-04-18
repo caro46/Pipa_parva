@@ -93,7 +93,24 @@ my $status;
 my $commandline;
 my @files;
 my $path = "/4/caroline/Pipa_parva/Rad_seq/demultiplex/";
-@files = glob($path."*.fq.gz");
+my @individuals=("BJE4294",
+"BJE4295",
+"BJE4296",
+"BJE4299",
+"BJE4300",
+"BJE4301",
+"BJE4302",
+"BJE4303",
+"BJE4304",
+"BJE4305",
+"BJE4306",
+"BJE4307",
+"BJE4308",
+"BJE4309");
+
+foreach my $individual (@individuals){
+
+@files = glob($path.$individual."\/".$individual.".fq.gz");
 my $x;
 my @files_no_extension;
 my @temp;
@@ -106,5 +123,7 @@ foreach(@files){
 for($x =0; $x <= $#files_no_extension; $x ++){
         $commandline = "java -jar /usr/local/trimmomatic/trimmomatic-0.36.jar SE -trimlog ".$files_no_extension[$x]."_log.txt ".$files_no_extension[$x].".fq.gz ".$files_no_extension[$x]."_single_trimmed.fastq.gz ILLUMINACLIP:/home/caroline/programs/adapters_TruSeq2_3_SE_repeats.fa:2:30:10 SLIDINGWINDOW:4:15 MINLEN:36";
         $status = system($commandline);
+}
+
 }
 ```
