@@ -127,3 +127,7 @@ for($x =0; $x <= $#files_no_extension; $x ++){
 
 }
 ```
+Checking again quality after trimming
+```
+/usr/local/fastqc/fastqc -o /4/caroline/Pipa_parva/Rad_seq/demultiplex/fastqc/ /4/caroline/Pipa_parva/Rad_seq/demultiplex/BJE*/*_single_trimmed.fastq.gz
+```
