@@ -140,4 +140,4 @@ Only_daughters_ZW scaffold_51   996419  G       A/A     ./.     ./.     ./.     
 Only_daughters_ZW scaffold_51   996425  G       T/T     ./.     ./.     ./.     ./.     T/T     T/T     ./.     ./.     ./.     T/T     T/T
      ./.     T/T
 ```
-*X. tropicalis* scaffold_51 996407..996425 = Chromsome 1 *X. laevis* (in intron of npffr2?)
+*X. tropicalis* scaffold_51 996407..996425 = Chromosome 1 *X. laevis* (in intron of npffr2?)
