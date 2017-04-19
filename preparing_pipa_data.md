@@ -131,6 +131,124 @@ Checking again quality after trimming
 ```
 /usr/local/fastqc/fastqc -o /4/caroline/Pipa_parva/Rad_seq/demultiplex/fastqc/ /4/caroline/Pipa_parva/Rad_seq/demultiplex/BJE*/*_single_trimmed.fastq.gz
 ```
+Mapping with BWA
+```
+#!/usr/bin/perl 
+
+use warnings;
+use strict;
+
+# This script will execute alignment functions for single end reads
+# using bwa mem for reference contigs
+
+my $path_to_data="/4/caroline/Pipa_parva/Rad_seq/demultiplex/";
+my $path_to_genome="/4/caroline/tropicalis_genome/";
+my $path_to_output="/4/caroline/Pipa_parva/Rad_seq/bwa/";
+my $genome="Xtropicalis_v9_repeatMasked_HARD_MASK.fa";
+my @individuals=("BJE4294",
+"BJE4295",
+"BJE4296",
+"BJE4299",
+"BJE4300",
+"BJE4301",
+"BJE4302",
+"BJE4303",
+"BJE4304",
+"BJE4305",
+"BJE4306",
+"BJE4307",
+"BJE4308",
+"BJE4309");
+
+my $commandline;
+my $status;
+
+##Index                                                                                                                      
+#$commandline = "bwa index -a bwtsw ".$path_to_genome."\/".$genome;                                 
+#$status = system($commandline);                                                                                             
+##bwa mem 
+foreach my $individual (@individuals) {
+
+#print $path_to_data.$individual."_single_trimmed.fastq.gz";
+
+$commandline = "bwa mem -t 5 -R \'\@RG\\tID:".$individual."\\tSM:".$individual."\\tLB:library1\\tPL:illumina\' ".$path_to_genome.$genome." ".$path_to_data.$individual."\/".$individual."_single_trimmed.fastq.gz \> ".$path_to_output.$individual."_trop.sam";
+$status = system($commandline);
+
+##Samtools : sam to bam                                                                                                      
+$commandline="samtools view -bt ".$path_to_genome.$genome." -o ".$path_to_output.$individual."_trop.bam ".$path_to_output.$individual."_trop.sam";
+$status = system($commandline);
+
+## Samtools : bam to _sorted.bam
+$commandline="samtools sort ".$path_to_output.$individual."_trop.bam -o".$path_to_output.$individual."_trop_sorted.bam";
+$status = system($commandline);
+$commandline= "samtools index ".$path_to_output.$individual."_trop_sorted.bam";
+$status = system($commandline);
+
+##Delete unecessary files
+print "Done with individual ",$individual,"\n";
+$commandline= "rm -f ".$path_to_output.$individual."_trop.sam ".$path_to_output.$individual."_trop.bam";
+$status = system($commandline);
+
+}
+
+```
+Genotype calls with samtools
+```
+#!/usr/bin/perl
+
+use warnings;
+use strict;
+
+#Using samtools to call the genotypes
+##RADseq previopusly aligned with bwa (script_bwa_GBS.pl)
+
+my $path_to_genome="/4/caroline/tropicalis_genome/";
+my $path_to_bwa_res="/4/caroline/Pipa_parva/Rad_seq/bwa/";
+my $path_to_output = "/4/caroline/Pipa_parva/Rad_seq/samtools_genotypes/";
+my $genome="Xtropicalis_v9_repeatMasked_HARD_MASK.fa";
+my $path_to_vcftab = "/usr/local/vcftools/src/perl/";
+my $path_to_tabix = "/usr/local/tabix/";
+
+my @individuals=("BJE4294",
+"BJE4295",
+"BJE4296",
+"BJE4299",
+"BJE4300",
+"BJE4301",
+"BJE4302",
+"BJE4303",
+"BJE4304",
+"BJE4305",
+"BJE4306",
+"BJE4307",
+"BJE4308",
+"BJE4309");
+
+my $commandline;
+my $status;
+
+#Variant calling
+$commandline = "samtools mpileup -d8000 -uf ".$path_to_genome.$genome." ";
+
+foreach my $individual (@individuals) {
+$commandline = $commandline.$path_to_bwa_res.$individual."_trop_sorted.bam ";
+}
+
+$commandline = $commandline."| bcftools call -mv -Oz \> ".$path_to_output."Pipa_trop_var.vcf.gz";
+$status = system($commandline);
+
+#Variant filtering
+#$commandline = "bcftools filter -O z ".$path_to_output."Pipa_trop_var.vcf.gz -s LowQual -e '%QUAL<5 || DP>1' \> ".$path_to_output."Pipa_trop_var.flt.vcf.gz";
+$commandline = "bcftools filter -O z ".$path_to_output."Pipa_trop_var.vcf.gz -s LowQual -e 'DP>1' \> ".$path_to_output."Pipa_trop_var.flt.vcf.gz";
+$status = system($commandline);
+
+#vcf to tab
+$commandline = "tabix -f -p vcf ".$path_to_output."Pipa_trop_var.flt.vcf.gz";
+$status = system($commandline);
+$commandline = "zcat ".$path_to_output."Pipa_trop_var.flt.vcf.gz | ".$path_to_vcftab."vcf-to-tab \> ".$path_to_output."Pipa_trop_var.tab";
+$status = system($commandline);
+
+```
 ```
 #CHROM  POS     REF     BJE4294 BJE4295 BJE4296 BJE4299 BJE4300 BJE4301 BJE4302 BJE4303 BJE4304 BJE4305 BJE4306 BJE4307 BJE4308 BJE4309
 Only_daughters_ZW scaffold_51   996407  A       G/G     ./.     ./.     ./.     ./.     G/G     G/G     ./.     ./.     ./.     G/G     G/G
