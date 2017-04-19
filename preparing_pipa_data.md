@@ -132,7 +132,7 @@ Checking again quality after trimming
 /usr/local/fastqc/fastqc -o /4/caroline/Pipa_parva/Rad_seq/demultiplex/fastqc/ /4/caroline/Pipa_parva/Rad_seq/demultiplex/BJE*/*_single_trimmed.fastq.gz
 ```
 Mapping with BWA
-```
+```perl
 #!/usr/bin/perl 
 
 use warnings;
@@ -193,7 +193,7 @@ $status = system($commandline);
 
 ```
 Genotype calls with samtools
-```
+```perl
 #!/usr/bin/perl
 
 use warnings;
