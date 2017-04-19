@@ -131,3 +131,13 @@ Checking again quality after trimming
 ```
 /usr/local/fastqc/fastqc -o /4/caroline/Pipa_parva/Rad_seq/demultiplex/fastqc/ /4/caroline/Pipa_parva/Rad_seq/demultiplex/BJE*/*_single_trimmed.fastq.gz
 ```
+```
+#CHROM  POS     REF     BJE4294 BJE4295 BJE4296 BJE4299 BJE4300 BJE4301 BJE4302 BJE4303 BJE4304 BJE4305 BJE4306 BJE4307 BJE4308 BJE4309
+Only_daughters_ZW scaffold_51   996407  A       G/G     ./.     ./.     ./.     ./.     G/G     G/G     ./.     ./.     ./.     G/G     G/G
+     ./.     G/G
+Only_daughters_ZW scaffold_51   996419  G       A/A     ./.     ./.     ./.     ./.     A/A     A/A     ./.     ./.     ./.     A/A     A/A
+     ./.     A/A
+Only_daughters_ZW scaffold_51   996425  G       T/T     ./.     ./.     ./.     ./.     T/T     T/T     ./.     ./.     ./.     T/T     T/T
+     ./.     T/T
+```
+*X. tropicalis* scaffold_51 996407..996425 = Chromsome 1 *X. laevis* (in intron of npffr2?)
