@@ -1,10 +1,11 @@
-# Sequence quality
+# RADseq
+## Sequence quality
 Check for over-represented sequences, adapters (need all the sequences) 
 ```
 /usr/local/fastqc/fastqc -o /4/caroline/Pipa_parva/Rad_seq/ /4/caroline/1016_S2_L002_R1_001.fastq.gz
 ```
-# STACKS: process_radtags
-## Installing locally the new version of stacks 
+## STACKS: process_radtags
+### Installing locally the new version of stacks 
 (need new version of gcc see [here](https://github.com/caro46/Hymenochirus/blob/master/some_commands.Rmd) for how to install gcc)
 ```
 export CC=/home/caroline/programs/gcc-6.2.0/bin/gcc
@@ -16,7 +17,7 @@ export LD=/home/caroline/programs/gcc-6.2.0/bin/gcc
 make
 make install
 ```
-## Run on the radseq
+### Run on the radseq
 Reads seem pretty good (trimmed using `-t 75` but will do trimmomatic after to remove bad quality reads and contaminated sequences).
 
 Need that each sample name in demultiplex_barcode is unique (ex. BJE4294_1 ...)
@@ -259,3 +260,10 @@ Only_daughters_ZW scaffold_51   996425  G       T/T     ./.     ./.     ./.     
      ./.     T/T
 ```
 *X. tropicalis* scaffold_51 996407..996425 = Chromosome 1 *X. laevis* (in intron of npffr2?)
+
+# HiSeq
+## Sequence quality 
+```
+/work/cauretc/programs/FastQC/fastqc -o /work/cauretc/2017_pipoidea/fastqc_quality /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/*.fastq.gz
+
+```
