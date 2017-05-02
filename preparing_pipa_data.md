@@ -338,3 +338,12 @@ if($on_off_switch == 1){
 ```
 /work/cauretc/programs/FastQC/fastqc -o /work/cauretc/2017_pipoidea/fastqc_quality /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/*_trim_paired.fastq.gz
 ```
+## Jellyfish/quake
+For some reason cannot install on sharnet whereas no issue on info...
+```
+tar -zxvf jellyfish-2.2.4\(1\).tar.gz 
+cd jellyfish-2.2.4
+./configure --prefix=/home/caroline/programs/jellyfish-2.2.4
+make
+make install
+```
