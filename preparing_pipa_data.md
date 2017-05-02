@@ -267,3 +267,74 @@ Only_daughters_ZW scaffold_51   996425  G       T/T     ./.     ./.     ./.     
 /work/cauretc/programs/FastQC/fastqc -o /work/cauretc/2017_pipoidea/fastqc_quality /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/*.fastq.gz
 
 ```
+```
+#!/usr/bin/perl                                                                                                                                                                                                                                   
+use warnings;
+use strict;
+
+# This script will read in the *fastq.gz file names in a directory, and                                                                                                                                                                           
+# run trimmomatic on each one.                                                                                                                                                                                                                    
+
+my $trimmomatic_path = "/work/cauretc/programs/Trimmomatic-0.36/";
+my $data_path = "/work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/";
+my $status;
+my @files;
+my $commandline;
+my @temp;
+my @pairsR1;
+my @pairsR2;
+my @unique;
+
+
+
+my @filesR1 = glob($data_path."*R1*fastq.gz");
+my @filesR2 = glob($data_path."*R2*fastq.gz");
+
+foreach(@filesR1){
+    @temp=split(".fastq.gz",$_);
+    push(@pairsR1,$temp[0]);
+}
+
+foreach(@filesR2){
+    @temp=split(".fastq.gz",$_);
+    push(@pairsR2,$temp[0]);
+}
+
+# make sure the names are in the same order
+
+@filesR1 = sort @filesR1;
+@filesR2 = sort @filesR2;
+
+my $x;
+my @replace;
+my $on_off_switch=1; # this is a switch to tell trimmomatic to work (1 = on, 0 = off)
+
+if($#filesR1 ne $#filesR2){
+    print "There is a different number of forward and reverse reads\n";
+}
+else{
+    for($x =0; $x <= $#pairsR1; $x ++){
+        ($replace[$x] = $pairsR1[$x]) =~ s/R1/R2/;
+        if($replace[$x] ne $pairsR2[$x]){
+            print "Problem with filenames\n";
+            $on_off_switch = 0;
+        }
+    }
+}
+
+#       if (the name are the same (compare $pairsR1[$x] and $pairsR2[$x]){           
+
+if($on_off_switch == 1){
+    for($x =0; $x <= $#pairsR1; $x ++){                                                              
+        #print $pairsR1[$x]," ",$pairsR2[$x],"\n";
+        $commandline = "java -Xmx1G -jar ".$trimmomatic_path."trimmomatic-0.36.jar PE -trimlog ";
+        $commandline = $commandline.$pairsR1[$x]."_log.txt ".$pairsR1[$x].".fastq.gz ".$pairsR2[$x].".fastq.gz ".$pairsR1[$x]."_trim_paired.fastq.gz ".$pairsR1[$x]."_trim_single.fastq.gz ".$pairsR2[$x]."_trim_paired.fastq.gz ".$pairsR2[$x]."_trim_single.fastq.gz ";
+        $commandline = $commandline."ILLUMINACLIP:".$trimmomatic_path."adapters/Pipoidea_TruSeqPE_fastqc_adapters.fa:2:30:10 SLIDINGWINDOW:4:15 MINLEN:36";
+        print $commandline,"\n";
+        $status = system($commandline);
+    }
+}
+```
+```
+/work/cauretc/programs/FastQC/fastqc -o /work/cauretc/2017_pipoidea/fastqc_quality /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/*_trim_paired.fastq.gz
+```
