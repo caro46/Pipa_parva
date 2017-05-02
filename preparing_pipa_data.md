@@ -267,7 +267,7 @@ Only_daughters_ZW scaffold_51   996425  G       T/T     ./.     ./.     ./.     
 /work/cauretc/programs/FastQC/fastqc -o /work/cauretc/2017_pipoidea/fastqc_quality /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/*.fastq.gz
 
 ```
-```
+```perl
 #!/usr/bin/perl                                                                                                                                                                                                                                   
 use warnings;
 use strict;
