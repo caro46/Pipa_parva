@@ -351,16 +351,23 @@ make install
 ```
 zcat /4/caroline/2017_Pipoidea_Hiseq/after_trimmomatic/BJE4294_*_trim_paired.fastq.gz | /home/caroline/programs/jellyfish-2.2.4/bin/jellyfish count /dev/fd/0 -m 19 -s 100M -t 16 -C -o /4/caroline/2017_Pipoidea_Hiseq/jellyfish/BJE4294_jelly_count_19mers
 
+#When BJE4295 trimmo done
 zcat /4/caroline/2017_Pipoidea_Hiseq/after_trimmomatic/BJE4295_*_trim_paired.fastq.gz | /home/caroline/programs/jellyfish-2.2.4/bin/jellyfish count /dev/fd/0 -m 19 -s 100M -t 16 -C -o /4/caroline/2017_Pipoidea_Hiseq/jellyfish/BJE4295_jelly_count_19mers
 
 /home/caroline/programs/jellyfish-2.2.4/bin/jellyfish dump -c -t /4/caroline/2017_Pipoidea_Hiseq/jellyfish/BJE4294_jelly_count_19mers -o /4/caroline/2017_Pipoidea_Hiseq/jellyfish/BJE4294_jelly_dump_19mers
-/usr/local/quake/bin/cov_model.py --int /4/caroline/2017_Pipoidea_Hiseq/jellyfish/BJE4295_jelly_count_19mers
+/usr/local/quake/bin/cov_model.py --int /4/caroline/2017_Pipoidea_Hiseq/jellyfish/BJE4294_jelly_dump_19mers
 
+#When BJE4295 trimmo done
+/home/caroline/programs/jellyfish-2.2.4/bin/jellyfish dump -c -t /4/caroline/2017_Pipoidea_Hiseq/jellyfish/BJE4295_jelly_count_19mers -o /4/caroline/2017_Pipoidea_Hiseq/jellyfish/BJE4295_jelly_dump_19mers
+/usr/local/quake/bin/cov_model.py --int /4/caroline/2017_Pipoidea_Hiseq/jellyfish/BJE4295_jelly_dump_19mers
+```
+Cutoff obtained: BJE4294:
+```
 /usr/local/quake/bin/correct -f /4/caroline/2017_Pipoidea_Hiseq/quake/filenames_quake_pipa_female.txt -z -k 19 -c 2 -m /home/evanslab/tetra_project/jellyfish_results/19mers/BJE4294_jelly_dump_19mers -p 4
 
 zcat /4/caroline/2017_Pipoidea_Hiseq/after_trimmomatic/CSL6209_*_trim_paired.fastq.gz | /home/caroline/programs/jellyfish-2.2.4/bin/jellyfish count /dev/fd/0 -m 19 -s 100M -t 16 -C -o /4/caroline/2017_Pipoidea_Hiseq/jellyfish/CSL6209_jelly_count_19mers
 
 /home/caroline/programs/jellyfish-2.2.4/bin/jellyfish dump -c -t /4/caroline/2017_Pipoidea_Hiseq/jellyfish/CSL6209_jelly_count_19mers -o /4/caroline/2017_Pipoidea_Hiseq/jellyfish/CSL6209_jelly_dump_19mers
-/usr/local/quake/bin/cov_model.py --int /4/caroline/2017_Pipoidea_Hiseq/jellyfish/CSL6209_jelly_count_19mers
+/usr/local/quake/bin/cov_model.py --int /4/caroline/2017_Pipoidea_Hiseq/jellyfish/CSL6209_jelly_dump_19mers
 
 ```
