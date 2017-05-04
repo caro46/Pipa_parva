@@ -335,7 +335,7 @@ if($on_off_switch == 1){
     }
 }
 ```
-Error for BJE4295 during the trimming (and fastqc failed to produce a file). Run it again. If an error again, need to copy the original data again to sharcnet (maybe error when copy).
+Error for BJE4295 during the trimming (and fastqc failed to produce a file). Run it again. If an error again, need to copy the original data again to sharcnet (maybe error when copy). So when it was run by itself, it went fine; perhaps an issue on sharcnet during the previous run...
 ```
 /work/cauretc/programs/FastQC/fastqc -o /work/cauretc/2017_pipoidea/fastqc_quality /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/*_trim_paired.fastq.gz
 ```
