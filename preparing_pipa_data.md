@@ -343,8 +343,12 @@ Some issues with kmers. Look if we correctly trimmed. From [Usadellab](http://ww
 
 *Naming of the sequences indicates how they should be used. For 'Palindrome' clipping, the sequence names should both start with 'Prefix', and end in '/1' for the forward adapter and '/2' for the reverse adapter. All other sequences are checked using 'simple' mode. Sequences with names ending in '/1' or '/2' will be checked only against the forward or reverse read. Sequences not ending in '/1' or '/2' will be checked against both the forward and reverse read. If you want to check for the reverse-complement of a specific sequence, you need to specifically include the reverse-complemented form of the sequence as well, with another name.*
 
-So we did not specify any /1 or /2 so all the adapters should be tested as forward and reverse in a simple mode. However, the `Palindrome` mode seems a little bit weird for me. A better explanation of the `palindrome` mode than in the manual can be found [here](http://seqanswers.com/forums/archive/index.php/t-11186.html).
+So we did not specify any /1 or /2 so all the adapters should be tested as forward and reverse in a simple mode. However, the `Palindrome` mode seems a little bit weird for me. A better explanation of the `palindrome` mode than in the manual can be found [here](http://seqanswers.com/forums/archive/index.php/t-11186.html). From *alisrpp*:
 ```
+
+About the palindrome clipping, some days ago i wrote one of the creators of Trimmomatic asking about an alternative explanation to the one in the web site (i couldn't understand it either).
+Here is the answer, for me was useful:
+
 Simple clipping is just finding a contaminant sequence somewhere within a read. Conceptually, you get contaminant and read, and you slide them across each other, until you get a perfect or close enough match. So, with R being read bases, and C being contaminant, you check
 
 1)
