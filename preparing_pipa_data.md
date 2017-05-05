@@ -339,6 +339,10 @@ Error for BJE4295 during the trimming (and fastqc failed to produce a file). Run
 ```
 /work/cauretc/programs/FastQC/fastqc -o /work/cauretc/2017_pipoidea/fastqc_quality /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/*_trim_paired.fastq.gz
 ```
+Some issues with kmers. Look if we correctly trimmed. From [Usadellab](http://www.usadellab.org/cms/?page=trimmomatic)
+
+*Naming of the sequences indicates how they should be used. For 'Palindrome' clipping, the sequence names should both start with 'Prefix', and end in '/1' for the forward adapter and '/2' for the reverse adapter. All other sequences are checked using 'simple' mode. Sequences with names ending in '/1' or '/2' will be checked only against the forward or reverse read. Sequences not ending in '/1' or '/2' will be checked against both the forward and reverse read. If you want to check for the reverse-complement of a specific sequence, you need to specifically include the reverse-complemented form of the sequence as well, with another name.*
+
 ## Jellyfish/quake
 For some reason cannot install on sharnet whereas no issue on info...
 ```
