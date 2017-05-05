@@ -336,6 +336,11 @@ if($on_off_switch == 1){
 }
 ```
 Error for BJE4295 during the trimming (and fastqc failed to produce a file). Run it again. If an error again, need to copy the original data again to sharcnet (maybe error when copy). So when it was run by itself, it went fine; perhaps an issue on sharcnet during the previous run...
+Exact command of the re-run
+```
+java -Xmx1G -jar /work/cauretc/programs/Trimmomatic-0.36/trimmomatic-0.36.jar PE -trimlog /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/BJE4295_S21_L003_R1_001_log.txt /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/BJE4295_S21_L003_R1_001.fastq.gz /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/BJE4295_S21_L003_R2_001.fastq.gz /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/BJE4295_S21_L003_R1_001_trim_paired.fastq.gz /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/BJE4295_S21_L003_R1_001_trim_single.fastq.gz /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/BJE4295_S21_L003_R2_001_trim_paired.fastq.gz /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/BJE4295_S21_L003_R2_001_trim_single.fastq.gz ILLUMINACLIP:/work/cauretc/programs/Trimmomatic-0.36/adapters/Pipoidea_TruSeqPE_fastqc_adapters.fa:2:30:10 SLIDINGWINDOW:4:15 MINLEN:36
+```
+FastQC
 ```
 /work/cauretc/programs/FastQC/fastqc -o /work/cauretc/2017_pipoidea/fastqc_quality /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/*_trim_paired.fastq.gz
 ```
