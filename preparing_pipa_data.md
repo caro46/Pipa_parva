@@ -385,7 +385,7 @@ cd jellyfish-2.2.4
 make
 make install
 ```
-`export R_LIBS=$HOME/Rlibs:$R_LIBS` used to load the `VGAM` library.
+`export R_LIBS=$HOME/Rlibs:$R_LIBS` used to load the `VGAM` library (version `1.0-3` downloaded from [here](https://www.stat.auckland.ac.nz/~yee/VGAM/download.shtml)).
 ```
 zcat /4/caroline/2017_Pipoidea_Hiseq/after_trimmomatic/BJE4294_*_trim_paired.fastq.gz | /home/caroline/programs/jellyfish-2.2.4/bin/jellyfish count /dev/fd/0 -m 19 -s 100M -t 16 -C -o /4/caroline/2017_Pipoidea_Hiseq/jellyfish/BJE4294_jelly_count_19mers
 
