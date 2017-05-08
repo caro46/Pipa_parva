@@ -385,6 +385,7 @@ cd jellyfish-2.2.4
 make
 make install
 ```
+`export R_LIBS=$HOME/Rlibs:$R_LIBS` used to load the `VGAM` library.
 ```
 zcat /4/caroline/2017_Pipoidea_Hiseq/after_trimmomatic/BJE4294_*_trim_paired.fastq.gz | /home/caroline/programs/jellyfish-2.2.4/bin/jellyfish count /dev/fd/0 -m 19 -s 100M -t 16 -C -o /4/caroline/2017_Pipoidea_Hiseq/jellyfish/BJE4294_jelly_count_19mers
 
@@ -410,7 +411,7 @@ zcat /4/caroline/2017_Pipoidea_Hiseq/after_trimmomatic/CSL6209_*_trim_paired.fas
 /usr/local/quake/bin/cov_model.py --int /4/caroline/2017_Pipoidea_Hiseq/jellyfish/CSL6209_jelly_dump_19mers
 
 ```
-For some reason, `cov_model.py` does not work whereas it was fine for Hymenochirus.
+For some reason, `cov_model.py` does not work whereas it was fine for *Hymenochirus*.
 ```R
 histoM=read.table("kmers_BJE4294.hist",sep="\t")
 histoF=read.table("kmers_BJE4295.hist",sep="\t")
