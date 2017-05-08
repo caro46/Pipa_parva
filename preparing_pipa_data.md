@@ -408,3 +408,22 @@ zcat /4/caroline/2017_Pipoidea_Hiseq/after_trimmomatic/CSL6209_*_trim_paired.fas
 /usr/local/quake/bin/cov_model.py --int /4/caroline/2017_Pipoidea_Hiseq/jellyfish/CSL6209_jelly_dump_19mers
 
 ```
+For some reason, `cov_model.py` does not work whereas it was fine for Hymenochirus.
+```
+histoM=read.table("kmers_BJE4294.hist",sep="\t")
+histoF=read.table("kmers_BJE4295.hist",sep="\t")
+histoR=read.table("kmers_CSL6209.hist",sep="\t")
+pdf('19mers_distribution_quake_pipa_Mom_Dad_Rhyno.pdf')
+#pdf('19mers_distribution_quake_pipa_Mom_Dad_Rhyno_5_200.pdf')
+plot(histoF,type="l",col="pink",ylab="count",xlab="coverage",main="19-mers distribution (Pipa Female & Male & Rhyno)")
+lines (histoM, col="blue")
+lines (histoR, col="green")
+legend('topright',c("Pipa Female BJE3814","Pipa Male BJE3815", "Rhyno"),lty=c(1,1),lwd=c(2.5,2.5),col=c("pink","blue","green"))
+dev.off()
+
+#plot(histoF[5:200,],type="l",col="pink",ylab="count",xlab="coverage",main="19-mers distribution (Hymenochirus Female & Male)")
+#lines (histoM[5:200,], col="blue")
+#lines (histoM[5:200,], col="green")
+#legend('topright',c("Female BJE3814","Male BJE3815"),lty=c(1,1),lwd=c(2.5,2.5),col=c("pink","blue"))
+#dev.off()
+```
