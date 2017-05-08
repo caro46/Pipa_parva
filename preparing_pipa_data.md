@@ -409,7 +409,7 @@ zcat /4/caroline/2017_Pipoidea_Hiseq/after_trimmomatic/CSL6209_*_trim_paired.fas
 
 ```
 For some reason, `cov_model.py` does not work whereas it was fine for Hymenochirus.
-```
+```R
 histoM=read.table("kmers_BJE4294.hist",sep="\t")
 histoF=read.table("kmers_BJE4295.hist",sep="\t")
 histoR=read.table("kmers_CSL6209.hist",sep="\t")
