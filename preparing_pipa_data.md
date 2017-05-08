@@ -392,6 +392,8 @@ zcat /4/caroline/2017_Pipoidea_Hiseq/after_trimmomatic/BJE4294_*_trim_paired.fas
 zcat /4/caroline/2017_Pipoidea_Hiseq/after_trimmomatic/BJE4295_*_trim_paired.fastq.gz | /home/caroline/programs/jellyfish-2.2.4/bin/jellyfish count /dev/fd/0 -m 19 -s 100M -t 16 -C -o /4/caroline/2017_Pipoidea_Hiseq/jellyfish/BJE4295_jelly_count_19mers
 
 /home/caroline/programs/jellyfish-2.2.4/bin/jellyfish dump -c -t /4/caroline/2017_Pipoidea_Hiseq/jellyfish/BJE4294_jelly_count_19mers -o /4/caroline/2017_Pipoidea_Hiseq/jellyfish/BJE4294_jelly_dump_19mers
+
+export R_LIBS=$HOME/Rlibs:$R_LIBS
 /usr/local/quake/bin/cov_model.py --int /4/caroline/2017_Pipoidea_Hiseq/jellyfish/BJE4294_jelly_dump_19mers
 
 #When BJE4295 trimmo done
@@ -427,3 +429,4 @@ dev.off()
 #legend('topright',c("Female BJE3814","Male BJE3815"),lty=c(1,1),lwd=c(2.5,2.5),col=c("pink","blue"))
 #dev.off()
 ```
+We will need to set different values for the cutoff for Pipa and Rhyno
