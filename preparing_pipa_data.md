@@ -391,6 +391,8 @@ scythe -a /work/cauretc/programs/Trimmomatic-0.36/adapters/Pipoidea_TruSeqPE_fas
 #Adapter Trimming Complete
 #contaminated: 3226899, uncontaminated: 139752723, total: 142979622
 #contamination rate: 0.022569
+
+./scythe -a /work/cauretc/programs/Trimmomatic-0.36/adapters/Pipoidea_TruSeqPE_fastqc_adapters_Wilson.fa -p 0.1 -o /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/BJE4295_S21_L003_R1_001_trim_paired_Scythe.fastq /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/BJE4295_S21_L003_R1_001_trim_paired.fastq.gz
 ```
 [AdapterRemoval v2](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4751634/), [github page](https://github.com/MikkelSchubert/adapterremoval/), seems to be a pretty good program to try if `scythe` does not work as well as expected.
 ## Jellyfish/quake
