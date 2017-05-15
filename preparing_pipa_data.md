@@ -406,6 +406,9 @@ scythe -a /work/cauretc/programs/Trimmomatic-0.36/adapters/Pipoidea_TruSeqPE_fas
 #contaminated: 3515509, uncontaminated: 154179566, total: 157695075
 #contamination rate: 0.022293
 ```
+Scythe seems to have resolved my k-mer issues. Let's use the data obtained from trimming with trimmomatic + scythe as input for quake.
+
+
 [AdapterRemoval v2](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4751634/), [github page](https://github.com/MikkelSchubert/adapterremoval/), seems to be a pretty good program to try if `scythe` does not work as well as expected.
 ## Jellyfish/quake
 For some reason cannot install on sharnet whereas no issue on info...
@@ -418,10 +421,10 @@ make install
 ```
 `export R_LIBS=$HOME/Rlibs:$R_LIBS` used to load the `VGAM` library (version `1.0-3` downloaded from [here](https://www.stat.auckland.ac.nz/~yee/VGAM/download.shtml)).
 ```
-zcat /4/caroline/2017_Pipoidea_Hiseq/after_trimmomatic/BJE4294_*_trim_paired.fastq.gz | /home/caroline/programs/jellyfish-2.2.4/bin/jellyfish count /dev/fd/0 -m 19 -s 100M -t 16 -C -o /4/caroline/2017_Pipoidea_Hiseq/jellyfish/BJE4294_jelly_count_19mers
+zcat /4/caroline/2017_Pipoidea_Hiseq/after_scythe/BJE4294_S20_L003_R*_001_trim_paired_Scythe.fastq.gz | /home/caroline/programs/jellyfish-2.2.4/bin/jellyfish count /dev/fd/0 -m 19 -s 100M -t 16 -C -o /4/caroline/2017_Pipoidea_Hiseq/jellyfish/after_scythe/BJE4294_jelly_count_19mers
 
 #When BJE4295 trimmo done
-zcat /4/caroline/2017_Pipoidea_Hiseq/after_trimmomatic/BJE4295_*_trim_paired.fastq.gz | /home/caroline/programs/jellyfish-2.2.4/bin/jellyfish count /dev/fd/0 -m 19 -s 100M -t 16 -C -o /4/caroline/2017_Pipoidea_Hiseq/jellyfish/BJE4295_jelly_count_19mers
+zcat /4/caroline/2017_Pipoidea_Hiseq/after_trimmomatic/BJE4295_*_trim_paired_Scythe.fastq.gz | /home/caroline/programs/jellyfish-2.2.4/bin/jellyfish count /dev/fd/0 -m 19 -s 100M -t 16 -C -o /4/caroline/2017_Pipoidea_Hiseq/jellyfish/after_scythe/BJE4295_jelly_count_19mers
 
 /home/caroline/programs/jellyfish-2.2.4/bin/jellyfish dump -c -t /4/caroline/2017_Pipoidea_Hiseq/jellyfish/BJE4294_jelly_count_19mers -o /4/caroline/2017_Pipoidea_Hiseq/jellyfish/BJE4294_jelly_dump_19mers
 
