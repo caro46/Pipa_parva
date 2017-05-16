@@ -405,6 +405,13 @@ scythe -a /work/cauretc/programs/Trimmomatic-0.36/adapters/Pipoidea_TruSeqPE_fas
 #Adapter Trimming Complete
 #contaminated: 3515509, uncontaminated: 154179566, total: 157695075
 #contamination rate: 0.022293
+
+./scythe -a /work/cauretc/programs/Trimmomatic-0.36/adapters/Pipoidea_TruSeqPE_fastqc_adapters_Wilson.fa -p 0.1 -o /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/CSL6209_S22_L003_R2_001_trim_paired_Scythe.fastq /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/CSL6209_S22_L003_R2_001_trim_paired.fastq.gz
+#prior: 0.100
+
+#Adapter Trimming Complete
+#contaminated: 2918856, uncontaminated: 144753137, total: 147671993
+#contamination rate: 0.019766
 ```
 Scythe seems to have resolved my k-mer issues. Let's use the data obtained from trimming with trimmomatic + scythe as input for quake.
 
