@@ -433,36 +433,27 @@ make
 make install
 ```
 `export R_LIBS=$HOME/Rlibs:$R_LIBS` used to load the `VGAM` library (version `1.0-3` downloaded from [here](https://www.stat.auckland.ac.nz/~yee/VGAM/download.shtml)). Need the version `VGAM_1.0-0`, otherwise not working.
-```
-zcat /4/caroline/2017_Pipoidea_Hiseq/after_scythe/BJE4294_S20_L003_R*_001_trim_paired_Scythe.fastq.gz | /home/caroline/programs/jellyfish-2.2.4/bin/jellyfish count /dev/fd/0 -m 19 -s 100M -t 16 -C -o /4/caroline/2017_Pipoidea_Hiseq/jellyfish/after_scythe/BJE4294_jelly_count_19mers
 
-#When BJE4295 trimmo done
-zcat /4/caroline/2017_Pipoidea_Hiseq/after_trimmomatic/BJE4295_*_trim_paired_Scythe.fastq.gz | /home/caroline/programs/jellyfish-2.2.4/bin/jellyfish count /dev/fd/0 -m 19 -s 100M -t 16 -C -o /4/caroline/2017_Pipoidea_Hiseq/jellyfish/after_scythe/BJE4295_jelly_count_19mers
-
-/home/caroline/programs/jellyfish-2.2.4/bin/jellyfish dump -c -t /4/caroline/2017_Pipoidea_Hiseq/jellyfish/BJE4294_jelly_count_19mers -o /4/caroline/2017_Pipoidea_Hiseq/jellyfish/BJE4294_jelly_dump_19mers
-
-export R_LIBS=$HOME/Rlibs:$R_LIBS
-/usr/local/quake/bin/cov_model.py --int /4/caroline/2017_Pipoidea_Hiseq/jellyfish/BJE4294_jelly_dump_19mers
-
-#When BJE4295 trimmo done
-/home/caroline/programs/jellyfish-2.2.4/bin/jellyfish dump -c -t /4/caroline/2017_Pipoidea_Hiseq/jellyfish/BJE4295_jelly_count_19mers -o /4/caroline/2017_Pipoidea_Hiseq/jellyfish/BJE4295_jelly_dump_19mers
-/usr/local/quake/bin/cov_model.py --int /4/caroline/2017_Pipoidea_Hiseq/jellyfish/BJE4295_jelly_dump_19mers
-```
 After `Scythe` trimming
 ```
 export R_LIBS=$HOME/Rlibs:$R_LIBS
 zcat /4/caroline/2017_Pipoidea_Hiseq/after_scythe/BJE4294_S20_L003_R*_001_trim_paired_Scythe.fastq.gz | /home/caroline/programs/jellyfish-2.2.4/bin/jellyfish count /dev/fd/0 -m 19 -s 100M -t 16 -C -o /4/caroline/2017_Pipoidea_Hiseq/jellyfish/after_scythe/BJE4294_jelly_count_19mers
 /home/caroline/programs/jellyfish-2.2.4/bin/jellyfish dump -c -t /4/caroline/2017_Pipoidea_Hiseq/jellyfish/after_scythe/BJE4294_jelly_count_19mers -o /4/caroline/2017_Pipoidea_Hiseq/jellyfish/after_scythe/BJE4294_jelly_dump_19mers
 /usr/local/quake/bin/cov_model.py  --int BJE4294_jelly_dump_19mers
+
+export R_LIBS=$HOME/Rlibs:$R_LIBS
+zcat /4/caroline/2017_Pipoidea_Hiseq/after_scythe/BJE4295_*_001_trim_paired_Scythe.fastq.gz | /home/caroline/programs/jellyfish-2.2.4/bin/jellyfish count /dev/fd/0 -m 19 -s 100M -t 16 -C -o /4/caroline/2017_Pipoidea_Hiseq/jellyfish/after_scythe/BJE4295_jelly_count_19mers
+/home/caroline/programs/jellyfish-2.2.4/bin/jellyfish dump -c -t /4/caroline/2017_Pipoidea_Hiseq/jellyfish/after_scythe/BJE4295_jelly_count_19mers -o /4/caroline/2017_Pipoidea_Hiseq/jellyfish/after_scythe/BJE4295_jelly_dump_19mers
+/usr/local/quake/bin/cov_model.py  --int BJE4295_jelly_dump_19mers
+
+export R_LIBS=$HOME/Rlibs:$R_LIBS
+zcat /4/caroline/2017_Pipoidea_Hiseq/after_scythe/CSL6209_*_trim_paired_Scythe.fastq.gz | /home/caroline/programs/jellyfish-2.2.4/bin/jellyfish count /dev/fd/0 -m 19 -s 100M -t 16 -C -o /4/caroline/2017_Pipoidea_Hiseq/jellyfish/after_scythe/CSL6209_jelly_count_19mers
+/home/caroline/programs/jellyfish-2.2.4/bin/jellyfish dump -c -t /4/caroline/2017_Pipoidea_Hiseq/jellyfish/after_scythe/CSL6209_jelly_count_19mers -o /4/caroline/2017_Pipoidea_Hiseq/jellyfish/after_scythe/CSL6209_jelly_dump_19mers
+/usr/local/quake/bin/cov_model.py --int /4/caroline/2017_Pipoidea_Hiseq/jellyfish/after_scythe/CSL6209_jelly_dump_19mers
 ```
 Cutoff obtained: BJE4294: 2; BJE4295:; CSL6209:.
 ```
 /usr/local/quake/bin/correct -f /4/caroline/2017_Pipoidea_Hiseq/quake/filenames_quake_pipa_female.txt -z -k 19 -c 2 -m /home/evanslab/tetra_project/jellyfish_results/19mers/BJE4294_jelly_dump_19mers -p 4
-
-zcat /4/caroline/2017_Pipoidea_Hiseq/after_trimmomatic/CSL6209_*_trim_paired.fastq.gz | /home/caroline/programs/jellyfish-2.2.4/bin/jellyfish count /dev/fd/0 -m 19 -s 100M -t 16 -C -o /4/caroline/2017_Pipoidea_Hiseq/jellyfish/CSL6209_jelly_count_19mers
-
-/home/caroline/programs/jellyfish-2.2.4/bin/jellyfish dump -c -t /4/caroline/2017_Pipoidea_Hiseq/jellyfish/CSL6209_jelly_count_19mers -o /4/caroline/2017_Pipoidea_Hiseq/jellyfish/CSL6209_jelly_dump_19mers
-/usr/local/quake/bin/cov_model.py --int /4/caroline/2017_Pipoidea_Hiseq/jellyfish/CSL6209_jelly_dump_19mers
 
 ```
 For some reason, `cov_model.py` does not work whereas it was fine for *Hymenochirus*. So turns out it is because of the version of the `VGAM` library (`VGAM_1.0-0` works, `VGAM_1.0-3` does not).
