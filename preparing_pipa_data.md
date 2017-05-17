@@ -422,7 +422,7 @@ scythe -a /work/cauretc/programs/Trimmomatic-0.36/adapters/Pipoidea_TruSeqPE_fas
 Scythe seems to have resolved my k-mer issues. Let's use the data obtained from trimming with trimmomatic + scythe as input for quake.
 
 
-[AdapterRemoval v2](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4751634/), [github page](https://github.com/MikkelSchubert/adapterremoval/), seems to be a pretty good program to try if `scythe` does not work as well as expected.
+[AdapterRemoval v2](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4751634/), [github page](https://github.com/MikkelSchubert/adapterremoval/), seems to be a pretty good program to try if `scythe` does not work as well as expected. Couldn't easily install it on Sharcnet so try [skewer](https://github.com/relipmoc/skewer)
 
 
 ```
