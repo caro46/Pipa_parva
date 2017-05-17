@@ -423,6 +423,11 @@ Scythe seems to have resolved my k-mer issues. Let's use the data obtained from 
 
 
 [AdapterRemoval v2](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4751634/), [github page](https://github.com/MikkelSchubert/adapterremoval/), seems to be a pretty good program to try if `scythe` does not work as well as expected.
+
+
+```
+skewer -Q 9 -t 2 -x /work/cauretc/programs/Trimmomatic-0.36/adapters/Pipoidea_TruSeqPE_fastqc_adapters_Wilson.fa /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/CSL6209_S22_L003_R2_001_trim_paired_Scythe.fastq.gz -z -o /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/CSL6209_S22_L003_R2_001_trim_paired_Scythe_skewer.fastq
+```
 ## Jellyfish/quake
 For some reason cannot install on sharnet whereas no issue on info...
 ```
@@ -451,7 +456,7 @@ zcat /4/caroline/2017_Pipoidea_Hiseq/after_scythe/CSL6209_*_trim_paired_Scythe.f
 /home/caroline/programs/jellyfish-2.2.4/bin/jellyfish dump -c -t /4/caroline/2017_Pipoidea_Hiseq/jellyfish/after_scythe/CSL6209_jelly_count_19mers -o /4/caroline/2017_Pipoidea_Hiseq/jellyfish/after_scythe/CSL6209_jelly_dump_19mers
 /usr/local/quake/bin/cov_model.py --int /4/caroline/2017_Pipoidea_Hiseq/jellyfish/after_scythe/CSL6209_jelly_dump_19mers
 ```
-Cutoff obtained: BJE4294: 2; BJE4295:; CSL6209:.
+Cutoff obtained: BJE4294: 2; BJE4295: 2; CSL6209:.
 ```
 /usr/local/quake/bin/correct -f /4/caroline/2017_Pipoidea_Hiseq/quake/filenames_quake_pipa_female.txt -z -k 19 -c 2 -m /home/evanslab/tetra_project/jellyfish_results/19mers/BJE4294_jelly_dump_19mers -p 4
 
