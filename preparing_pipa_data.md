@@ -458,9 +458,9 @@ zcat /4/caroline/2017_Pipoidea_Hiseq/after_scythe/CSL6209_*_trim_paired_Scythe.f
 ```
 Cutoff obtained: BJE4294: 2; BJE4295: 2; CSL6209:.
 ```
-/usr/local/quake/bin/correct -f /4/caroline/2017_Pipoidea_Hiseq/quake/filenames_quake_pipa_female.txt -z -k 19 -c 2 -m /home/evanslab/tetra_project/jellyfish_results/after_scythe/BJE4294_jelly_dump_19mers -p 4
+/usr/local/quake/bin/correct -f /4/caroline/2017_Pipoidea_Hiseq/quake/filenames_quake_pipa_female.txt -z -k 19 -c 2 -m /4/caroline/2017_Pipoidea_Hiseq/jellyfish/after_scythe/BJE4294_jelly_dump_19mers -p 4
 
-/usr/local/quake/bin/correct -f /4/caroline/2017_Pipoidea_Hiseq/quake/filenames_quake_pipa_male.txt -z -k 19 -c 2 -m /home/evanslab/tetra_project/jellyfish_results/after_scythe/BJE4295_jelly_dump_19mers -p 4
+/usr/local/quake/bin/correct -f /4/caroline/2017_Pipoidea_Hiseq/quake/filenames_quake_pipa_male.txt -z -k 19 -c 2 -m /4/caroline/2017_Pipoidea_Hiseq/jellyfish/after_scythe/BJE4295_jelly_dump_19mers -p 4
 ```
 For some reason, `cov_model.py` does not work whereas it was fine for *Hymenochirus*. So turns out it is because of the version of the `VGAM` library (`VGAM_1.0-0` works, `VGAM_1.0-3` does not).
 ```R
