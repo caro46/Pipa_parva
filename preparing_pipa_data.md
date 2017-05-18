@@ -426,8 +426,14 @@ Scythe seems to have resolved my k-mer issues. Let's use the data obtained from 
 
 
 ```
-skewer -Q 9 -t 2 -x /work/cauretc/programs/Trimmomatic-0.36/adapters/Pipoidea_TruSeqPE_fastqc_adapters_Wilson.fa /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/CSL6209_S22_L003_R2_001_trim_paired_Scythe.fastq.gz -z -o /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/CSL6209_S22_L003_R2_001_trim_paired_Scythe_skewer.fastq
+./skewer -Q 9 -t 2 -x /work/cauretc/programs/Trimmomatic-0.36/adapters/Pipoidea_TruSeqPE_fastqc_adapters_Wilson.fa /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/CSL6209_S22_L003_R1_001_trim_paired_Scythe.fastq.gz /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/CSL6209_S22_L003_R2_001_trim_paired_Scythe.fastq.gz -z -o /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/CSL6209_skewer
 ```
+Still the same issue with the k-mers
+```
+java -jar AlienTrimmer.jar -if /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/CSL6209_S22_L003_R1_001_trim_paired_Scythe.fastq.gz -ir /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/CSL6209_S22_L003_R2_001_trim_paired_Scythe.fastq.gz -of /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/CSL6209_S22_L003_R1_001_trim_paired_Scythe_AlienTrimmer.fastq.gz -of /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/CSL6209_S22_L003_R2_001_trim_paired_Scythe_AlienTrimmer.fastq.gz -c /work/cauretc/programs/Trimmomatic-0.36/adapters/Pipoidea_TruSeqPE_fastqc_adapters_Wilson.fa
+```
+Sounds like an issue with using gzipped files.
+Try also using `<(zcat the_gzipped_file)` and `<(gzip -c the_gzipped_file)` without success. If I unzipped the files they will be huge so let's forget this software.
 ## Jellyfish/quake
 For some reason cannot install on sharnet whereas no issue on info...
 ```
