@@ -47,3 +47,9 @@ N90     127     1221745
 NG50    NaN     NaN
 N50_scaffold-NG50_scaffold_length_difference    NaN
 ```
+Improving
+
+In `/scratch/cauretc/SOAP_assemblies/` where I copied the results from the previous command. We redo the last step of scaffolding, this time trying `-F` to fill in the gaps (for *Hymenochirus* always failed because of the memory)
+```
+/work/cauretc/programs/SOAPdenovo2-src-r240/SOAPdenovo-63mer scaff -g SOAP_pipa_genome_chimerical_63mers -F -p 10 1 >scaff.log 2>scaff.err
+```
