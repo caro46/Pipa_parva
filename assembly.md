@@ -47,7 +47,7 @@ N90     127     1221745
 NG50    NaN     NaN
 N50_scaffold-NG50_scaffold_length_difference    NaN
 ```
-Improving
+## Improving: filling the gaps
 
 In `/scratch/cauretc/SOAP_assemblies/` where I copied the results from the previous command. We redo the last step of scaffolding, this time trying `-F` to fill in the gaps (for *Hymenochirus* always failed because of the memory)
 ```
