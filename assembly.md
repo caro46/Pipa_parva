@@ -53,3 +53,47 @@ In `/scratch/cauretc/SOAP_assemblies/` where I copied the results from the previ
 ```
 /work/cauretc/programs/SOAPdenovo2-src-r240/SOAPdenovo-63mer scaff -g SOAP_pipa_genome_chimerical_63mers -F -p 10 1 >scaff.log 2>scaff.err
 ```
+```
+<-- Information for assembly Scaffold 'SOAP_pipa_genome_chimerical_63mers.scafSeq'.(cut_off_length < 100bp) -->
+
+Size_includeN   1836116521
+Size_withoutN   1800826343
+Scaffold_Num    2766152
+Mean_Size       663
+Median_Size     127
+Longest_Seq     117088
+Shortest_Seq    100
+Singleton_Num   2470888
+Average_length_of_break(N)_in_scaffold  12
+
+Known_genome_size       NaN
+Total_scaffold_length_as_percentage_of_known_genome_size        NaN
+
+scaffolds>100   2721469 98.38%
+scaffolds>500   314265  11.36%
+scaffolds>1K    227334  8.22%
+scaffolds>10K   41213   1.49%
+scaffolds>100K  7       0.00%
+scaffolds>1M    0       0.00%
+
+Nucleotide_A    557881575       30.38%
+Nucleotide_C    350128959       19.07%
+Nucleotide_G    343941812       18.73%
+Nucleotide_T    548873997       29.89%
+GapContent_N    35290178        1.92%
+Non_ACGTN       0       0.00%
+GC_Content      38.54%          (G+C)/(A+C+G+T)
+
+N10     27355   4941
+N20     18707   13180
+N30     13762   24685
+N40     10168   40257
+N50     7280    61634
+N60     4838    92533
+N70     2611    143512
+N80     612     284285
+N90     127     1186311
+
+NG50    NaN     NaN
+N50_scaffold-NG50_scaffold_length_difference    NaN
+```
