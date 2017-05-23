@@ -47,38 +47,9 @@ N90     127     1221745
 NG50    NaN     NaN
 N50_scaffold-NG50_scaffold_length_difference    NaN
 ```
-### 53mers (K=53)
-```
-/work/cauretc/programs/SOAPdenovo2-src-r240/SOAPdenovo-63mer all -s /work/cauretc/2017_pipoidea/pipa_chimerical.config -K 53 -R -V -p 10 -F -o /work/cauretc/2017_pipoidea/Assemblies/SOAP_pipa_genome_chimerical_53mers
 
-The final rank
+#### Improving: filling the gaps
 
-*******************************
- Scaffold number                  304566
- In-scaffold contig number        4259013
- Total scaffold length            1404611141
- Average scaffold length          4611
- Filled gap number                554653
- Longest scaffold                 140357
- Scaffold and singleton number    2259624
- Scaffold and singleton length    1594594292
- Average length                   705
- N50                              8160
- N90                              444
- Weak points                      0
-
-*******************************
-
-#Issue with gap filling
-
-*** glibc detected *** /work/cauretc/programs/SOAPdenovo2-src-r240/SOAPdenovo-63mer: double free or corruption (!prev): 0x000000036424b9e0 ***
-
-#Rerun the scaffolding step
-
-/work/cauretc/programs/SOAPdenovo2-src-r240/SOAPdenovo-63mer scaff -g SOAP_pipa_genome_chimerical_53mers -F -p 10 1 >scaff.log 2>scaff.err
-```
-## Improving: filling the gaps
-### 63mers (K=63)
 In `/scratch/cauretc/SOAP_assemblies/` where I copied the results from the previous command. We redo the last step of scaffolding, this time trying `-F` to fill in the gaps (for *Hymenochirus* always failed because of the memory)
 ```
 /work/cauretc/programs/SOAPdenovo2-src-r240/SOAPdenovo-63mer scaff -g SOAP_pipa_genome_chimerical_63mers -F -p 10 1 >scaff.log 2>scaff.err
@@ -126,4 +97,34 @@ N90     127     1186311
 
 NG50    NaN     NaN
 N50_scaffold-NG50_scaffold_length_difference    NaN
+```
+### 53mers (K=53)
+```
+/work/cauretc/programs/SOAPdenovo2-src-r240/SOAPdenovo-63mer all -s /work/cauretc/2017_pipoidea/pipa_chimerical.config -K 53 -R -V -p 10 -F -o /work/cauretc/2017_pipoidea/Assemblies/SOAP_pipa_genome_chimerical_53mers
+
+The final rank
+
+*******************************
+ Scaffold number                  304566
+ In-scaffold contig number        4259013
+ Total scaffold length            1404611141
+ Average scaffold length          4611
+ Filled gap number                554653
+ Longest scaffold                 140357
+ Scaffold and singleton number    2259624
+ Scaffold and singleton length    1594594292
+ Average length                   705
+ N50                              8160
+ N90                              444
+ Weak points                      0
+
+*******************************
+
+#Issue with gap filling
+
+*** glibc detected *** /work/cauretc/programs/SOAPdenovo2-src-r240/SOAPdenovo-63mer: double free or corruption (!prev): 0x000000036424b9e0 ***
+
+#Rerun the scaffolding step
+
+/work/cauretc/programs/SOAPdenovo2-src-r240/SOAPdenovo-63mer scaff -g SOAP_pipa_genome_chimerical_53mers -F -p 10 1 >scaff.log 2>scaff.err
 ```
