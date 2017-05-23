@@ -127,4 +127,44 @@ The final rank
 #Rerun the scaffolding step
 
 /work/cauretc/programs/SOAPdenovo2-src-r240/SOAPdenovo-63mer scaff -g SOAP_pipa_genome_chimerical_53mers -F -p 10 1 >scaff.log 2>scaff.err
+
+<-- Information for assembly Scaffold 'SOAP_pipa_genome_chimerical_53mers.scafSeq'.(cut_off_length < 100bp) -->
+
+Size_includeN   1703163115
+Size_withoutN   1662799375
+Scaffold_Num    2238461
+Mean_Size       760
+Median_Size     107
+Longest_Seq     140466
+Shortest_Seq    100
+Singleton_Num   1933895
+Average_length_of_break(N)_in_scaffold  18
+
+Known_genome_size       NaN
+Total_scaffold_length_as_percentage_of_known_genome_size        NaN
+
+scaffolds>100   2175265 97.18%
+scaffolds>500   307367  13.73%
+scaffolds>1K    228359  10.20%
+scaffolds>10K   39121   1.75%
+scaffolds>100K  6       0.00%
+scaffolds>1M    0       0.00%
+
+Nucleotide_A    515135733       30.25%
+Nucleotide_C    321717614       18.89%
+Nucleotide_G    317140165       18.62%
+Nucleotide_T    508805863       29.87%
+GapContent_N    40363740        2.37%
+Non_ACGTN       0       0.00%
+GC_Content      38.42%          (G+C)/(A+C+G+T)
+
+N10     25825   4880
+N20     17961   12901
+N30     13410   23921
+N40     10091   38611
+N50     7471    58269
+N60     5229    85487
+N70     3226    126600
+N80     1247    208372
+N90     152     673284
 ```
