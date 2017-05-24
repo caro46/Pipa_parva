@@ -177,4 +177,7 @@ N90     152     673284
 On wob101
 ```
 /work/cauretc/programs/SOAPdenovo2-src-r240/SOAPdenovo-127mer all -s /work/cauretc/2017_pipoidea/pipa_chimerical.config -K 73 -R -V -p 10 -F -o /work/cauretc/2017_pipoidea/Assemblies/SOAP_pipa_genome_chimerical_73mers
+
+-- Out of memory --
+Aborted
 ```
