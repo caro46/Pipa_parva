@@ -178,6 +178,22 @@ On wob101
 ```
 /work/cauretc/programs/SOAPdenovo2-src-r240/SOAPdenovo-127mer all -s /work/cauretc/2017_pipoidea/pipa_chimerical.config -K 73 -R -V -p 10 -F -o /work/cauretc/2017_pipoidea/Assemblies/SOAP_pipa_genome_chimerical_73mers
 
+Version 2.04: released on July 13th, 2012
+Compile Apr 24 2017     16:11:31
+
+********************
+Pregraph
+********************
+
+Parameters: pregraph -s /work/cauretc/2017_pipoidea/pipa_chimerical.config -K 73 -p 10 -R -o /work/cauretc/2017_pipoidea/Assemblies/SOAP_pipa_genome_chimerical_73mers
+
+In /work/cauretc/2017_pipoidea/pipa_chimerical.config, 2 lib(s), maximum read length 151, maximum name length 256.
+
+10 thread(s) initialized.
+Import reads from file:
+ /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/BJE4294_S20_L003_R1_001_trim_paired_Scythe.cor.fastq.gz
+Import reads from file:
+ /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/BJE4294_S20_L003_R2_001_trim_paired_Scythe.cor.fastq.gz
 -- Out of memory --
 Aborted
 ```
