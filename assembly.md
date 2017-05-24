@@ -173,3 +173,8 @@ N90     152     673284
 /work/cauretc/programs/SOAPdenovo2-src-r240/SOAPdenovo-63mer all -s /work/cauretc/2017_pipoidea/pipa_chimerical.config -K 43 -R -V -p 10 -F -o /work/cauretc/2017_pipoidea/Assemblies/SOAP_pipa_genome_chimerical_43mers
 /work/cauretc/programs/SOAPdenovo2-src-r240/SOAPdenovo-63mer scaff -g SOAP_pipa_genome_chimerical_43mers -F -p 10 1 >scaff_43mers.log 2>scaff_43mers.err
 ```
+### 73mers (K=73)
+On wob101
+```
+/work/cauretc/programs/SOAPdenovo2-src-r240/SOAPdenovo-127mer all -s /work/cauretc/2017_pipoidea/pipa_chimerical.config -K 73 -R -V -p 10 -F -o /work/cauretc/2017_pipoidea/Assemblies/SOAP_pipa_genome_chimerical_73mers
+```
