@@ -280,3 +280,6 @@ N80     439     346448
 N90     146     1350952
 
 ```
+### 33mers (K=33)
+```
+/work/cauretc/programs/SOAPdenovo2-src-r240/SOAPdenovo-63mer all -s /work/cauretc/2017_pipoidea/pipa_chimerical.config -K 33 -R -V -p 10 -F -o /work/cauretc/2017_pipoidea/Assemblies/SOAP_pipa_genome_chimerical_33mers
