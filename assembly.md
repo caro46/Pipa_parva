@@ -237,3 +237,46 @@ Import reads from file:
 -- Out of memory --
 Aborted
 ```
+On Iqaluk
+```
+<-- Information for assembly Scaffold 'SOAP_pipa_genome_chimerical_73mers.scafSeq'.(cut_off_length < 100bp) -->
+
+Size_includeN   1916733275
+Size_withoutN   1886739856
+Scaffold_Num    2927436
+Mean_Size       654
+Median_Size     143
+Longest_Seq     141745
+Shortest_Seq    100
+Singleton_Num   2642287
+Average_length_of_break(N)_in_scaffold  10
+
+Known_genome_size       NaN
+Total_scaffold_length_as_percentage_of_known_genome_size        NaN
+
+scaffolds>100   2874985 98.21%
+scaffolds>500   320584  10.95%
+scaffolds>1K    227250  7.76%
+scaffolds>10K   42591   1.45%
+scaffolds>100K  17      0.00%
+scaffolds>1M    0       0.00%
+
+Nucleotide_A    583767649       30.46%
+Nucleotide_C    367950376       19.20%
+Nucleotide_G    361469267       18.86%
+Nucleotide_T    573552564       29.92%
+GapContent_N    29993419        1.56%
+Non_ACGTN       0       0.00%
+GC_Content      38.66%          (G+C)/(A+C+G+T)
+
+N10     28650   4897
+N20     19454   13141
+N30     14183   24752
+N40     10336   40635
+N50     7273    62751
+N60     4678    95530
+N70     2301    152904
+N80     439     346448
+N90     146     1350952
+
+```
