@@ -375,7 +375,7 @@ AAAAAAFFFFFFF ->
 
 In this case, the aligning region is much longer, since it consists of the entire read length plus part of the adapter. This gives a very high confidence that an apparent 'read-though' is a true-positive.
 ```
-## Scythe
+## [Scythe](https://github.com/vsbuffalo/scythe)
 ```
 scythe -a /work/cauretc/programs/Trimmomatic-0.36/adapters/Pipoidea_TruSeqPE_fastqc_adapters_Wilson.fa -p 0.1 -o /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/BJE4294_S20_L003_R1_001_trim_paired_Scythe.fastq /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/BJE4294_S20_L003_R1_001_trim_paired.fastq.gz
 
