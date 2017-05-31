@@ -283,6 +283,51 @@ N90     146     1350952
 ### 33mers (K=33)
 ```
 /work/cauretc/programs/SOAPdenovo2-src-r240/SOAPdenovo-63mer all -s /work/cauretc/2017_pipoidea/pipa_chimerical.config -K 33 -R -V -p 10 -F -o /work/cauretc/2017_pipoidea/Assemblies/SOAP_pipa_genome_chimerical_33mers
+/work/cauretc/programs/SOAPdenovo2-src-r240/SOAPdenovo-63mer scaff -g SOAP_pipa_genome_chimerical_33mers -F -p 10 1 >scaff_33mers.log 2>scaff_33mers.err
+```
+```
+<-- Information for assembly Scaffold 'SOAP_pipa_genome_chimerical_33mers.scafSeq'.(cut_off_length < 100bp) -->
+
+Size_includeN   1435239738
+Size_withoutN   1355990151
+Scaffold_Num    779847
+Mean_Size       1840
+Median_Size     274
+Longest_Seq     116899
+Shortest_Seq    100
+Singleton_Num   455048
+Average_length_of_break(N)_in_scaffold  101
+
+Known_genome_size       NaN
+Total_scaffold_length_as_percentage_of_known_genome_size        NaN
+
+scaffolds>100   773323  99.16%
+scaffolds>500   307559  39.44%
+scaffolds>1K    243548  31.23%
+scaffolds>10K   32631   4.18%
+scaffolds>100K  1       0.00%
+scaffolds>1M    0       0.00%
+
+Nucleotide_A    424732361       29.59%
+Nucleotide_C    254859312       17.76%
+Nucleotide_G    253929428       17.69%
+Nucleotide_T    422469050       29.44%
+GapContent_N    79249587        5.52%
+Non_ACGTN       0       0.00%
+GC_Content      37.52%          (G+C)/(A+C+G+T)
+
+N10     20968   5155
+N20     15121   13331
+N30     11674   24188
+N40     9161    38104
+N50     7163    55847
+N60     5491    78748
+N70     4005    109302
+N80     2594    153491
+N90     1103    235085
+
+NG50    NaN     NaN
+N50_scaffold-NG50_scaffold_length_difference    NaN
 ```
 ### Choice of the assembly
 For now (before 33mers done): 43mers (N50, mean, median, number of scaffolds)
