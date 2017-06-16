@@ -23,3 +23,4 @@ sh Compile_dependencies.sh
 perl Configure.pl 
 sh Install.sh /home/caroline/programs/TEclass-2.1.3
 ```
+If `short forward_vs_reverse ... sh: line 1: 28134 Segmentation fault`, try to re-install everything from downloading.
