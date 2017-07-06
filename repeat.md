@@ -26,6 +26,17 @@ Unclear:  23219
 Total: 93448
 
 /home/caroline/programs/TEclass-2.1.3/TEclassTest.pl -r /4/caroline/Pipa_parva/RepARK_output/BJE4294_repeats/repeat_lib.fasta -o /4/caroline/Pipa_parva/RepARK_output/BJE4294_repeats/TEclass
+
+less /4/caroline/Pipa_parva/RepARK_output/BJE4294_repeats/repeat_lib.fasta_1497646833/repeat_lib.fasta.stat
+Repeat statistics:
+DNA transposons: 39571
+LTRs:  20028
+LINEs: 3850
+SINEs: 6493
+Unclear:  23258
+
+Total: 93200
+
 ```
 If when you try to run you got `Some of your classifiers appear to be missing.` even though you have the classifiers and the good paths in the scripts, try installing again with:
 ```
