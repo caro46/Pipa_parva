@@ -47,7 +47,7 @@ mv /4/caroline/Pipa_parva/Rad_seq/samtools_genotypes/Sex_linked/SOAP_chim_assemb
 # HiSeq genotypes - chr.06
 - Calling genotypes from HiSeq data from dad and mom (using supercontigs of chimerical assembly as ref)
 
--Identifying if SNP in mom different from dad in wnt9a
+- Identifying if SNP in mom different from dad in wnt9a
 
 ```
 blastn -evalue 1e-20 -query /4/caroline/Pipa_parva/blast_genes/wnt9a_xenbase_Xtrop.fa -db /4/caroline/2017_Pipoidea_Hiseq/Assemblies/SOAP_pipa_genome_chimerical_43mers_blastable -out /4/caroline/Pipa_parva/blast_genes/Pipa_chimerical_Xtrop_wnt9a_e20 -outfmt 6 -max_target_seqs 1
