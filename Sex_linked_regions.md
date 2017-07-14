@@ -42,4 +42,47 @@ mv /4/caroline/Pipa_parva/Rad_seq/samtools_genotypes/Sex_linked/SOAP_chim_assemb
 ### Genes
 - Scaffolds 726 -> NCOA2 (transcriptional coactivator for stroid receptor), 12050 -> chd7. A CHD gene is used to determined the sex of some birds ([see](http://www.academia.edu/10024376/Avian_Sex_Determination_Based_on_Chromo_Helicase_DNA-binding_CHD_Genes_Using_Polymerase_Chain_Reaction_PCR)).
 
-- On Chr.06: catenin beta 1 (ctnnb1) involve in wnt signaling pathway, SOX4.
+- On Chr.06: catenin beta 1 (ctnnb1) involve in wnt signaling pathway, SOX4, wnt9a ([ovarian development](http://www.sciencedirect.com/science/article/pii/S0303720706005843?via%3Dihub)).
+
+#HiSeq genotypes - chr.06
+- Calling genotypes from HiSeq data from dad and mom (using supercontigs of chimerical assembly as ref)
+
+-Identifying if SNP in mom different from dad in wnt9a
+
+```
+blastn -evalue 1e-20 -query /4/caroline/Pipa_parva/blast_genes/wnt9a_xenbase_Xtrop.fa -db /4/caroline/2017_Pipoidea_Hiseq/Assemblies/SOAP_pipa_genome_chimerical_43mers_blastable -out /4/caroline/Pipa_parva/blast_genes/Pipa_chimerical_Xtrop_wnt9a_e20 -outfmt 6 -max_target_seqs 1
+blastn -evalue 1e-20 -query /4/caroline/Pipa_parva/blast_genes/wnt9a_xenbase_Xtrop.fa -db /4/caroline/2017_Pipoidea_Hiseq/Assemblies/SOAP_pipa_genome_chimerical_43mers_blastable -out /4/caroline/Pipa_parva/blast_genes/Pipa_chimerical_Xtrop_wnt9a_e20_pairwise -outfmt 0 -max_target_seqs 1
+```
+Mapped against `scaffold173038` of chimerical assembly. But cannot find the exon 1, even with:
+```
+blastn -evalue 1e-1 -query /4/caroline/Pipa_parva/blast_genes/wnt9a_xenbase_Xtrop_e1_only.fa -db /4/caroline/2017_Pipoidea_Hiseq/Assemblies/SOAP_pipa_genome_chimerical_43mers_blastable -out /4/caroline/Pipa_parva/blast_genes/Pipa_chimerical_Xtrop_wnt9a_exon1_only_e1 -outfmt 6 -max_target_seqs 1
+```
+```
+grep "scaffold173038" /4/caroline/2017_Pipoidea_Hiseq/Assemblies/SOAP_pipa_genome_chimerical_43mers_supercontigs.index
+#6	scaffold173038	34782481	34793964
+```
+Extract from vcf file the genotypes corresponding to chimerical `scaffold173038`
+```
+vcftools --vcf /4/caroline/Pipa_parva/HiSeq_analysis/Pipa_chimerical_recalibrated_round1.vcf --chr "supercontig_6" --from-bp 34782481 --to-bp 34793964 --recode --recode-INFO-all --out /4/caroline/Pipa_parva/HiSeq_analysis/Pipa_chimerical_recalibrated_round1_scaffold173038
+```
+```
+/usr/local/vcftools/src/perl/vcf-to-tab < /4/caroline/Pipa_parva/HiSeq_analysis/Pipa_chimerical_recalibrated_round1_scaffold173038.recode.vcf > /4/caroline/Pipa_parva/HiSeq_analysis/Pipa_chimerical_recalibrated_round1_scaffold173038.recode.tab
+```
+```
+#CHROM  POS     REF     BJE4294 BJE4295
+...
+supercontig_6   34791518        AT      AT/A    A/A
+supercontig_6   34791529        AT      AT/A    A/A
+supercontig_6   34791536        A       A/AG    AG/AG
+supercontig_6   34791537        T       T/TTCCA TTCCA/TTCCA
+supercontig_6   34791615        GTTTA   GTTTA/G G/G
+```
+Positions on `scaffold173038`:
+```
+34791518-34782481=9037
+34791529-34782481=9048
+34791536-34782481=9055
+34791537-34782481=9056
+34791615-34782481=9134
+```
+Location of `wnt9a`: `scaffold173038 4743-4256`.
