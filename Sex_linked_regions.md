@@ -44,7 +44,7 @@ mv /4/caroline/Pipa_parva/Rad_seq/samtools_genotypes/Sex_linked/SOAP_chim_assemb
 
 - On Chr.06: catenin beta 1 (ctnnb1) involve in wnt signaling pathway, SOX4, wnt9a ([ovarian development](http://www.sciencedirect.com/science/article/pii/S0303720706005843?via%3Dihub)).
 
-#HiSeq genotypes - chr.06
+# HiSeq genotypes - chr.06
 - Calling genotypes from HiSeq data from dad and mom (using supercontigs of chimerical assembly as ref)
 
 -Identifying if SNP in mom different from dad in wnt9a
