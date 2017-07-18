@@ -86,3 +86,23 @@ Positions on `scaffold173038`:
 34791615-34782481=9134
 ```
 Location of `wnt9a`: `scaffold173038 4743-4256`.
+
+**Note:** `vcf` files zipped using `gzip /4/caroline/Pipa_parva/HiSeq_analysis/*.vcf`. To directly obtain genotypes from a region using `vcf.gz` files: `vcftools --gzvcf FILE [...]`.
+
+- Identifying if SNP in mom different from dad in `sox4`
+```
+blastn -evalue 1e-20 -query /4/caroline/Pipa_parva/blast_genes/Sox4_xenbase_Xtrop.fa -db /4/caroline/2017_Pipoidea_Hiseq/Assemblies/SOAP_pipa_genome_chimerical_43mers_blastable -out /4/caroline/Pipa_parva/blast_genes/Pipa_chimerical_Xtrop_sox4_e20 -outfmt 6 -max_target_seqs 1
+grep "scaffold51301" /4/caroline/2017_Pipoidea_Hiseq/Assemblies/SOAP_pipa_genome_chimerical_43mers_supercontigs.index
+#2	scaffold51301	194665281	194689488
+vcftools --vcf /4/caroline/Pipa_parva/HiSeq_analysis/Pipa_chimerical_recalibrated_round1.vcf --chr "supercontig_2" --from-bp 194665281 --to-bp 194689488 --recode --recode-INFO-all --out /4/caroline/Pipa_parva/HiSeq_analysis/Pipa_chimerical_recalibrated_round1_scaffold51301
+vcftools --vcf /4/caroline/Pipa_parva/HiSeq_analysis/Pipa_chimerical_nonrecal_varonly.vcf --chr "supercontig_2" --from-bp 194665281 --to-bp 194689488 --recode --recode-INFO-all --out /4/caroline/Pipa_parva/HiSeq_analysis/Pipa_chimerical_non_recal_scaffold51301
+/usr/local/vcftools/src/perl/vcf-to-tab </4/caroline/Pipa_parva/HiSeq_analysis/Pipa_chimerical_recalibrated_round1_scaffold51301.recode.vcf >/4/caroline/Pipa_parva/HiSeq_analysis/Pipa_chimerical_recalibrated_round1_scaffold51301.recode.tab
+```
+- Identifying if SNP in mom different from dad in `rab2a`
+```
+blastn -evalue 1e-20 -query /4/caroline/Pipa_parva/blast_genes/rab2a_xenbase_Xtrop.fa -db /4/caroline/2017_Pipoidea_Hiseq/Assemblies/SOAP_pipa_genome_chimerical_43mers_blastable -out /4/caroline/Pipa_parva/blast_genes/Pipa_chimerical_Xtrop_rab2a_e20 -outfmt 6 -max_target_seqs 1
+grep "scaffold210848" /4/caroline/2017_Pipoidea_Hiseq/Assemblies/SOAP_pipa_genome_chimerical_43mers_supercontigs.index
+#6	scaffold210848	166408241	166409321
+vcftools --vcf /4/caroline/Pipa_parva/HiSeq_analysis/Pipa_chimerical_recalibrated_round1.vcf --chr "supercontig_6" --from-bp 166408241 --to-bp 166409321 --recode --recode-INFO-all --out /4/caroline/Pipa_parva/HiSeq_analysis/Pipa_chimerical_recalibrated_round1_scaffold210848
+
+```
