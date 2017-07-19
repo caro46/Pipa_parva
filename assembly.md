@@ -338,6 +338,48 @@ For now (before 33mers done): 43mers (N50, mean, median, number of scaffolds)
 /work/cauretc/programs/SOAPdenovo2-src-r240/SOAPdenovo-63mer all -s /work/cauretc/2017_pipoidea/pipa_male_only.config -K 43 -R -V -p 10 -F -o /work/cauretc/2017_pipoidea/Assemblies/SOAP_pipa_genome_dad_43mers 1>ass_male.log 2>ass_male.err
 ```
 ```
+<-- Information for assembly Scaffold '/work/cauretc/2017_pipoidea/Assemblies/SOAP_pipa_genome_dad_4
+3mers.scafSeq'.(cut_off_length < 100bp) -->
+
+Size_includeN	1486989833
+Size_withoutN	1442475660
+Scaffold_Num	1043327
+Mean_Size	1425
+Median_Size	232
+Longest_Seq	100148
+Shortest_Seq	100
+Singleton_Num	647213
+Average_length_of_break(N)_in_scaffold	42
+
+Known_genome_size	NaN
+Total_scaffold_length_as_percentage_of_known_genome_size	NaN
+
+scaffolds>100 	1031882	98.90%
+scaffolds>500 	377714	36.20%
+scaffolds>1K  	287788	27.58%
+scaffolds>10K 	26264	2.52%
+scaffolds>100K	1	0.00%
+scaffolds>1M  	0	0.00%
+
+Nucleotide_A	449351379	30.22%
+Nucleotide_C	274030093	18.43%
+Nucleotide_G	272365618	18.32%
+Nucleotide_T	446728570	30.04%
+GapContent_N	44514173	2.99%
+Non_ACGTN	0	0.00%
+GC_Content	37.88%		(G+C)/(A+C+G+T)
+
+N10	16363	6906
+N20	11824	17727
+N30	9087	32157
+N40	7134	50665
+N50	5557	74314
+N60	4223	105020
+N70	3017	146569
+N80	1872	208528
+N90	693	333459
+```
+```
 /work/cauretc/programs/SOAPdenovo2-src-r240/SOAPdenovo-63mer all -s /work/cauretc/2017_pipoidea/pipa_female_only.config -K 43 -R -V -p 10 -F -o /work/cauretc/2017_pipoidea/Assemblies/SOAP_pipa_genome_mom_43mers 1>ass_female.log 2>ass_female.err
 
 #Segmentation fault #(need to run again when dad is done to see if they compete for the memory on iqaluk)
