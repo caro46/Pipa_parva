@@ -106,3 +106,6 @@ grep "scaffold210848" /4/caroline/2017_Pipoidea_Hiseq/Assemblies/SOAP_pipa_genom
 vcftools --vcf /4/caroline/Pipa_parva/HiSeq_analysis/Pipa_chimerical_recalibrated_round1.vcf --chr "supercontig_6" --from-bp 166408241 --to-bp 166409321 --recode --recode-INFO-all --out /4/caroline/Pipa_parva/HiSeq_analysis/Pipa_chimerical_recalibrated_round1_scaffold210848
 
 ```
+Looked for SNP near exons for: `ctnnb1`, `hoxa11`, `sox4`, `NCOA2`, `wnt9a`, `cdk6`, `cyp51a`, `evx1`, `cbx3`, `cdh7`.
+
+`Scaffold1250`: contains `chd7` and first exons of `NCOA2`. RADseq SNP with sex inheritance pattern was identified at position `13602`. Using genotypes from HiSeq: position 19518 in intron 1 interesting (supercontig_1: 101510799): heterozygous `G/A` for dad, homozygous `G/G` for mom. Can amplify exon 2 (~180bp) with part of intron 1 containing the SNP: `scaffold1250` ~ 19200..20100 (~900bp). 
