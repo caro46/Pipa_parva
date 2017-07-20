@@ -383,4 +383,7 @@ N90	693	333459
 /work/cauretc/programs/SOAPdenovo2-src-r240/SOAPdenovo-63mer all -s /work/cauretc/2017_pipoidea/pipa_female_only.config -K 43 -R -V -p 10 -F -o /work/cauretc/2017_pipoidea/Assemblies/SOAP_pipa_genome_mom_43mers 1>ass_female.log 2>ass_female.err
 
 #Segmentation fault #(need to run again when dad is done to see if they compete for the memory on iqaluk)
+#Run OK the 2nd time until scaffolding and gap filling
+
+/work/cauretc/programs/SOAPdenovo2-src-r240/SOAPdenovo-63mer scaff -g SOAP_pipa_genome_mom_43mers -F -p 10 1>scaff_female.log 2>scaff_female.err
 ```
