@@ -109,3 +109,27 @@ vcftools --vcf /4/caroline/Pipa_parva/HiSeq_analysis/Pipa_chimerical_recalibrate
 Looked for SNP near exons for: `ctnnb1`, `hoxa11`, `sox4`, `NCOA2`, `wnt9a`, `cdk6`, `cyp51a`, `evx1`, `cbx3`, `cdh7`.
 
 `Scaffold1250`: first exons of `NCOA2`. Using genotypes from HiSeq: position 19401 in intron 1 interesting (supercontig_1: 11067322): heterozygous `G/A` for dad, homozygous `G/G` for mom. Can amplify exon 2 (~180bp) with part of intron 1 containing the SNP: `scaffold1250` ~ 19200..20100 (~900bp). Position 18885 (supercontig_1	11066806, mom:T/T dad:T/TG) and 17755 (supercontig_1: 11065676, mom: G/G, dad: G/GT). Exon 1 from 18609..18694, should amplify from 18400..19300 (~900bp).
+
+## Primers
+NCOA2 (exon2 - 180bp - from 19822 to 19992 of Scaffold1250). SNP at position 18885. Primer3 on NCBI: Forward primer from 19200 - Reverse primer to 20500 ; PCR product size: Min 500, Max 1500 ; Primer Pair Specificity Checking Parameters: Xenopus (taxid:8353) ; other parameters = default values.
+```
+Primer pair 2
+	Sequence (5'->3')	Template strand	Length	Start	Stop	Tm	GC%	Self complementarity	Self 3' complementarity
+Forward primer	CTGTCTGGCAAATTCACACCC	Plus	21	19327	19347	59.73	52.38	4.00	1.00
+Reverse primer	GTGTGGCCTAAAGCACCAAC	Minus	20	20131	20112	59.69	55.00	4.00	2.00
+Product length	805
+```
+NCOA2 (exon2 - 85bp - from 18609 to 18694 of Scaffold1250). SNP at 18885. Forward primer from 18200 - Reverse primer to 19500. Other: same as previously.
+```
+Primer pair 1
+	Sequence (5'->3')	Template strand	Length	Start	Stop	Tm	GC%	Self complementarity	Self 3' complementarity
+Forward primer	GCAGGGTTAAAGGCACCAGA	Plus	20	18272	18291	60.25	55.00	4.00	0.00
+Reverse primer	AGAAAGGAGCCCACATGCAA	Minus	20	19087	19068	59.89	50.00	4.00	2.00
+Product length	816
+
+Primer pair 8
+	Sequence (5'->3')	Template strand	Length	Start	Stop	Tm	GC%	Self complementarity	Self 3' complementarity
+Forward primer	CACCTACGGCTGACTGCTC	Plus	19	18210	18228	60.15	63.16	3.00	1.00
+Reverse primer	ACTGGTGGGAACAAAGGTGT	Minus	20	18991	18972	59.37	50.00	3.00	2.00
+Product length	782
+```
