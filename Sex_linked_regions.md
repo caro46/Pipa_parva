@@ -110,6 +110,33 @@ Looked for SNP near exons for: `ctnnb1`, `hoxa11`, `sox4`, `NCOA2`, `wnt9a`, `cd
 
 `Scaffold1250`: first exons of `NCOA2`. Using genotypes from HiSeq: position 19401 in intron 1 interesting (supercontig_1: 11067322): heterozygous `G/A` for dad, homozygous `G/G` for mom. Can amplify exon 2 (~180bp) with part of intron 1 containing the SNP: `scaffold1250` ~ 19200..20100 (~900bp). Position 18885 (supercontig_1	11066806, mom:T/T dad:T/TG) and 17755 (supercontig_1: 11065676, mom: G/G, dad: G/GT). Exon 1 from 18609..18694, should amplify from 18400..19300 (~900bp).
 
+- Identifying if SNP in mom different from dad in `mmp16`
+
+`Scaffold11527` contains a SNP with a sex inheritance pattern identified by RADseq (position 17118).It maps to an intronic region of `mmp16` of X. tropicalis v9.0 on xenbase. 
+```
+blastn -evalue 1e-1 -query /4/caroline/Pipa_parva/blast_genes/mmp16_cds_utr_xenbase_Xtrop.fa -db /4/caroline/2017_Pipoidea_Hiseq/Assemblies/SOAP_pipa_genome_chimerical_43mers_blastable -out /4/caroline/Pipa_parva/blast_genes/Pipa_chimerical_Xtrop_mmp16_cds_utr_e1_nomaxtarget -outfmt 6
+
+#mmp16	scaffold177758	83.492	1363	151	40	1363	2675	12112	10774	0.0	1203
+#mmp16	C50588817	94.156	308	18	0	274	581	629	322	1.58e-129	470
+#mmp16	scaffold90826	88.444	225	25	1	734	958	3538	3761	1.72e-69	270
+#mmp16	scaffold156786	91.946	149	12	0	1	149	910	762	3.81e-51	209
+#mmp16	C48796834	94.915	118	6	0	1247	1364	110	227	6.42e-44	185
+#mmp16	scaffold64654	86.164	159	20	2	944	1100	6123	6281	1.80e-39	171
+```
+We blast the cds of this gene onto our genome to try to identify sex-specific SNP using HiSeq ddata in the exons. 
+```
+grep "scaffold177758" /4/caroline/2017_Pipoidea_Hiseq/Assemblies/SOAP_pipa_genome_chimerical_43mers_supercontigs.index
+#6	scaffold177758	52788721	52802656
+vcftools --gzvcf /4/caroline/Pipa_parva/HiSeq_analysis/Pipa_chimerical_nonrecal_varonly.vcf.gz --chr "supercontig_6" --from-bp 52788721 --to-bp 52802656 --recode --recode-INFO-all --out /4/caroline/Pipa_parva/HiSeq_analysis/Pipa_chimerical_non_recal_scaffold177758
+/usr/local/vcftools/src/perl/vcf-to-tab < /4/caroline/Pipa_parva/HiSeq_analysis/Pipa_chimerical_non_recal_scaffold177758.recode.vcf > /4/caroline/Pipa_parva/HiSeq_analysis/Pipa_chimerical_non_recal_scaffold177758.recode.tab
+```
+The `scaffold177758` maps to the last exon (~335bp long) of the gene from xenbase. A SNP 
+```
+supercontig_6	52799693	G	G/G	G/A
+```
+at position `10972` (52799693-52788721=10972) of the `scaffold177758` has been identified.
+
+Need to be carefull when designing the primers. At position 10694, heterozygous with deletions. 
 ## Primers
 NCOA2 (exon2 - 180bp - from 19822 to 19992 of Scaffold1250). SNP at position 18885. Primer3 on NCBI: Forward primer from 19200 - Reverse primer to 20500 ; PCR product size: Min 500, Max 1500 ; Primer Pair Specificity Checking Parameters: Xenopus (taxid:8353) ; other parameters = default values.
 ```
@@ -133,3 +160,4 @@ Forward primer	CACCTACGGCTGACTGCTC	Plus	19	18210	18228	60.15	63.16	3.00	1.00
 Reverse primer	ACTGGTGGGAACAAAGGTGT	Minus	20	18991	18972	59.37	50.00	3.00	2.00
 Product length	782
 ```
+
