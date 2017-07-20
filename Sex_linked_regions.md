@@ -139,6 +139,25 @@ supercontig_6	52799693	G	G/G	G/A
 at position `10972` (52799693-52788721=10972) of the `scaffold177758` has been identified.
 
 Need to be carefull when designing the primers. At position 10694, heterozygous with deletions. 
+
+- Identifying if SNP in mom different from dad near `kctd1`
+
+`scaffold96475` had a SNP with a XY sex inheritance pattern. It blasted in a region surrounded by `kcdtd1`, `taf4b`, `ss18`, `znf521-like`. 
+```
+blastn -evalue 1e-20 -query /4/caroline/Pipa_parva/blast_genes/kctd1_cds_xenbase_Xtrop.fa -db /4/caroline/2017_Pipoidea_Hiseq/Assemblies/SOAP_pipa_genome_chimerical_43mers_blastable -out /4/caroline/Pipa_parva/blast_genes/Pipa_chimerical_Xtrop_kctd1_cds_e20_nomaxtarget -outfmt 6
+```
+```
+kctd1	scaffold297564	84.342	1437	205	15	309	1738	653	2076	0.0	1389
+kctd1	scaffold68613	87.658	316	38	1	1892	2207	4861	4547	1.36e-98	366
+kctd1	scaffold68613	91.195	159	14	0	2204	2362	3670	3512	1.45e-53	217
+```
+```
+vcftools --gzvcf /4/caroline/Pipa_parva/HiSeq_analysis/Pipa_chimerical_nonrecal_varonly.vcf.gz --chr "supercontig_7" --from-bp 160739841 --to-bp 160745253 --recode --recode-INFO-all --out /4/caroline/Pipa_parva/HiSeq_analysis/Pipa_chimerical_non_recal_scaffold297564
+/usr/local/vcftools/src/perl/vcf-to-tab < /4/caroline/Pipa_parva/HiSeq_analysis/Pipa_chimerical_non_recal_scaffold297564.recode.vcf > /4/caroline/Pipa_parva/HiSeq_analysis/Pipa_chimerical_non_recal_scaffold297564.recode.tab
+vcftools --gzvcf /4/caroline/Pipa_parva/HiSeq_analysis/Pipa_chimerical_nonrecal_varonly.vcf.gz --chr "supercontig_3" --from-bp 111060401 --to-bp 111069555 --recode --recode-INFO-all --out /4/caroline/Pipa_parva/HiSeq_analysis/Pipa_chimerical_non_recal_scaffold68613
+/usr/local/vcftools/src/perl/vcf-to-tab < /4/caroline/Pipa_parva/HiSeq_analysis/Pipa_chimerical_non_recal_scaffold68613.recode.vcf > /4/caroline/Pipa_parva/HiSeq_analysis/Pipa_chimerical_non_recal_scaffold68613.recode.tab
+```
+`scaffold68613` at position 3755 (supercontig_3:111064156 - 111060401=3755): mom=C/C, dad=C/T; position, 3214 (supercontig_3:111063615): C/C vs C/A; 4437 (supercontig_3:111064838): CATTAA/CATTAA vs C/CATTAA. 
 ## Primers
 NCOA2 (exon2 - 180bp - from 19822 to 19992 of Scaffold1250). SNP at position 18885. Primer3 on NCBI: Forward primer from 19200 - Reverse primer to 20500 ; PCR product size: Min 500, Max 1500 ; Primer Pair Specificity Checking Parameters: Xenopus (taxid:8353) ; other parameters = default values.
 ```
