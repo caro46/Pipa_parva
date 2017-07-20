@@ -140,7 +140,7 @@ at position `10972` (52799693-52788721=10972) of the `scaffold177758` has been i
 
 Need to be carefull when designing the primers. At position 10694, heterozygous with deletions. 
 
-- Identifying if SNP in mom different from dad near `kctd1`
+- Identifying if SNP in mom different from dad near `kctd1` (Chr06:94888462..94915523)
 
 `scaffold96475` had a SNP with a XY sex inheritance pattern. It blasted in a region surrounded by `kcdtd1`, `taf4b`, `ss18`, `znf521-like`. 
 ```
@@ -151,6 +151,7 @@ kctd1	scaffold297564	84.342	1437	205	15	309	1738	653	2076	0.0	1389
 kctd1	scaffold68613	87.658	316	38	1	1892	2207	4861	4547	1.36e-98	366
 kctd1	scaffold68613	91.195	159	14	0	2204	2362	3670	3512	1.45e-53	217
 ```
+`scaffold68613` contains the 2 last exons of `kctd1`.
 ```
 vcftools --gzvcf /4/caroline/Pipa_parva/HiSeq_analysis/Pipa_chimerical_nonrecal_varonly.vcf.gz --chr "supercontig_7" --from-bp 160739841 --to-bp 160745253 --recode --recode-INFO-all --out /4/caroline/Pipa_parva/HiSeq_analysis/Pipa_chimerical_non_recal_scaffold297564
 /usr/local/vcftools/src/perl/vcf-to-tab < /4/caroline/Pipa_parva/HiSeq_analysis/Pipa_chimerical_non_recal_scaffold297564.recode.vcf > /4/caroline/Pipa_parva/HiSeq_analysis/Pipa_chimerical_non_recal_scaffold297564.recode.tab
