@@ -114,7 +114,7 @@ Looked for SNP near exons for: `ctnnb1`, `hoxa11`, `sox4`, `NCOA2`, `wnt9a`, `cd
 
 - Identifying if SNP in mom different from dad in `mmp16` (Chr06:110830741..110898268)
 
-`Scaffold11527` contains a SNP with a sex inheritance pattern identified by RADseq (position 17118).It maps to an intronic region of `mmp16` of X. tropicalis v9.0 on xenbase. 
+`Scaffold11527` contains a SNP with a sex inheritance pattern identified by RADseq (position 17118). It maps to an intronic region of `mmp16` of *X. tropicalis* v9.0 on xenbase. 
 ```
 blastn -evalue 1e-1 -query /4/caroline/Pipa_parva/blast_genes/mmp16_cds_utr_xenbase_Xtrop.fa -db /4/caroline/2017_Pipoidea_Hiseq/Assemblies/SOAP_pipa_genome_chimerical_43mers_blastable -out /4/caroline/Pipa_parva/blast_genes/Pipa_chimerical_Xtrop_mmp16_cds_utr_e1_nomaxtarget -outfmt 6
 
@@ -125,7 +125,7 @@ blastn -evalue 1e-1 -query /4/caroline/Pipa_parva/blast_genes/mmp16_cds_utr_xenb
 #mmp16	C48796834	94.915	118	6	0	1247	1364	110	227	6.42e-44	185
 #mmp16	scaffold64654	86.164	159	20	2	944	1100	6123	6281	1.80e-39	171
 ```
-We blast the cds of this gene onto our genome to try to identify sex-specific SNP using HiSeq ddata in the exons. 
+We blast the cds of this gene onto our genome to try to identify sex-specific SNP using HiSeq data in the exons. 
 ```
 grep "scaffold177758" /4/caroline/2017_Pipoidea_Hiseq/Assemblies/SOAP_pipa_genome_chimerical_43mers_supercontigs.index
 #6	scaffold177758	52788721	52802656
@@ -160,6 +160,8 @@ vcftools --gzvcf /4/caroline/Pipa_parva/HiSeq_analysis/Pipa_chimerical_nonrecal_
 ```
 `scaffold68613` at position 3755 (supercontig_3:111064156 - 111060401=3755): mom=C/C, dad=C/T; position, 3214 (supercontig_3:111063615): C/C vs C/A; 4437 (supercontig_3:111064838): CATTAA/CATTAA vs C/CATTAA. 
 ## Primers
+
+### NCOA2
 NCOA2 (exon2 - 180bp - from 19822 to 19992 of Scaffold1250). SNP at position 18885. Primer3 on NCBI: Forward primer from 19200 - Reverse primer to 20500 ; PCR product size: Min 500, Max 1500 ; Primer Pair Specificity Checking Parameters: Xenopus (taxid:8353) ; other parameters = default values.
 ```
 Primer pair 2
@@ -182,4 +184,63 @@ Forward primer	CACCTACGGCTGACTGCTC	Plus	19	18210	18228	60.15	63.16	3.00	1.00
 Reverse primer	ACTGGTGGGAACAAAGGTGT	Minus	20	18991	18972	59.37	50.00	3.00	2.00
 Product length	782
 ```
+### mmp16
+Need to include position 10972 of `scaffold177758`. and try to amplify the whole exon (~ position 12112..10774) and avoid position 10694. 
 
+Forward primer from 10700 - Reverse primer to 12500. Other: same as previously.
+```
+Primer pair 4
+	Sequence (5'->3')	Template strand	Length	Start	Stop	Tm	GC%	Self complementarity	Self 3' complementarity
+Forward primer	CAGACAGACCAGCATAAGGGG	Plus	21	10917	10937	60.13	57.14	2.00	0.00
+Reverse primer	TGCAAGAGTGGGTGTGATGT	Minus	20	11743	11724	59.53	50.00	4.00	0.00
+Product length	827
+```
+The SNP we are interesting in is a little bit close to the primer (~35bp). Looking for primers further from the SNP, the issue is that we will include a potential deletion SNP which can cause not very clean sequences after sequencing. Need to ask Ben boss for his opinion.
+
+Forward primer from 10600 - Reverse primer to 12500. Other: same as previously.
+```
+Primer pair 4
+	Sequence (5'->3')	Template strand	Length	Start	Stop	Tm	GC%	Self complementarity	Self 3' complementarity
+Forward primer	AGTCGCTCCCACTGTCATTTT	Plus	21	10692	10712	59.93	47.62	3.00	0.00
+Reverse primer	AGTGGGTGTGATGTAGGGCT	Minus	20	11737	11718	60.55	55.00	2.00	2.00
+Product length	1046
+Primer pair 5
+	Sequence (5'->3')	Template strand	Length	Start	Stop	Tm	GC%	Self complementarity	Self 3' complementarity
+Forward primer	AGTTGAAAACAGTCGCTCCCA	Plus	21	10682	10702	60.13	47.62	3.00	0.00
+Reverse primer	GCCTTTCCTCTGCACATCGT	Minus	20	11495	11476	60.67	55.00	4.00	2.00
+Product length	814
+Primer pair 6
+	Sequence (5'->3')	Template strand	Length	Start	Stop	Tm	GC%	Self complementarity	Self 3' complementarity
+Forward primer	CCAGACAGACCAGCATAAGGG	Plus	21	10916	10936	60.13	57.14	2.00	0.00
+Reverse primer	CAACACAGCAAGCACTGTGA	Minus	20	11883	11864	59.27	50.00	5.00	3.00
+Product length	968
+Primer pair 7
+	Sequence (5'->3')	Template strand	Length	Start	Stop	Tm	GC%	Self complementarity	Self 3' complementarity
+Forward primer	GACAGACCAGCATAAGGGGA	Plus	20	10919	10938	58.80	55.00	2.00	0.00
+Reverse primer	TGCCTTTGAGTGGGGATTCA	Minus	20	11593	11574	59.22	50.00	3.00	2.00
+Product length	675
+
+```
+### kctd1
+Need to include position 3755 and 3214 of `scaffold68613`.
+
+Forward primer from 3100 - Reverse primer to 4000 ; PCR product size: Min 600, Max 1500. Other: same as previously.
+```
+Primer pair 4
+	Sequence (5'->3')	Template strand	Length	Start	Stop	Tm	GC%	Self complementarity	Self 3' complementarity
+Forward primer	TGGAAGGATTTTACCAGCGGC	Plus	21	3129	3149	60.95	52.38	4.00	3.00
+Reverse primer	CACTTGCTGTGTGCAGTGAAA	Minus	21	3890	3870	59.87	47.62	4.00	2.00
+Product length	762
+
+Primer pair 8
+	Sequence (5'->3')	Template strand	Length	Start	Stop	Tm	GC%	Self complementarity	Self 3' complementarity
+Forward primer	TTTTACCAGCGGCTAAGAGG	Plus	20	3137	3156	57.60	50.00	6.00	2.00
+Reverse primer	AATCACTTGCTGTGTGCAGT	Minus	20	3893	3874	58.32	45.00	4.00	1.00
+Product length	757
+
+Primer pair 10
+	Sequence (5'->3')	Template strand	Length	Start	Stop	Tm	GC%	Self complementarity	Self 3' complementarity
+Forward primer	CCATCCTTAAGTTGCCGTCCT	Plus	21	3299	3319	60.07	52.38	6.00	0.00
+Reverse primer	CACCCTTTAGTCAATAAGGCCC	Minus	22	3953	3932	58.71	50.00	5.00	3.00
+Product length	655
+```
