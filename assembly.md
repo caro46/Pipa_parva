@@ -387,3 +387,44 @@ N90	693	333459
 
 /work/cauretc/programs/SOAPdenovo2-src-r240/SOAPdenovo-63mer scaff -g SOAP_pipa_genome_mom_43mers -F -p 10 1>scaff_female.log 2>scaff_female.err
 ```
+```
+<-- Information for assembly Scaffold 'SOAP_pipa_genome_mom_43mers.scafSeq'.(cut_off_length < 100bp) -->
+
+Size_includeN   1478792254
+Size_withoutN   1432507058
+Scaffold_Num    1028208
+Mean_Size       1438
+Median_Size     216
+Longest_Seq     85337
+Shortest_Seq    100
+Singleton_Num   647850
+Average_length_of_break(N)_in_scaffold  45
+
+Known_genome_size       NaN
+Total_scaffold_length_as_percentage_of_known_genome_size        NaN
+
+scaffolds>100   1015962 98.81%
+scaffolds>500   362766  35.28%
+scaffolds>1K    276971  26.94%
+scaffolds>10K   28024   2.73%
+scaffolds>100K  0       0.00%
+scaffolds>1M    0       0.00%
+
+Nucleotide_A    447123366       30.24%
+Nucleotide_C    271314481       18.35%
+Nucleotide_G    269568518       18.23%
+Nucleotide_T    444500693       30.06%
+GapContent_N    46285196        3.13%
+Non_ACGTN       0       0.00%
+GC_Content      37.76%          (G+C)/(A+C+G+T)
+
+N10     17364   6410
+N20     12532   16570
+N30     9675    30075
+N40     7554    47407
+N50     5861    69654
+N60     4441    98645
+N70     3163    138004
+N80     1949    196971
+N90     716     316746
+```
