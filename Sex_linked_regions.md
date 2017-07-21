@@ -192,7 +192,7 @@ Product length	782
 ```
 Best primer pair: Primer pair 8 (because of self complementarity).
 ### mmp16
-*mmp16 (matrix metallopeptidase 16): (expressed in the rat testis)[http://www.reproduction-online.org/content/134/3/455.full.pdf] (one of DMRT1-bound genes)[http://www.pnas.org/content/107/30/13360.full.pdf]*
+*mmp16 (matrix metallopeptidase 16): [expressed in the rat testis](http://www.reproduction-online.org/content/134/3/455.full.pdf), [one of DMRT1-bound genes](http://www.pnas.org/content/107/30/13360.full.pdf)*
 
 Need to include position 10972 of `scaffold177758`. and try to amplify the whole exon (~ position 12112..10774) and avoid position 10694. 
 
@@ -231,7 +231,7 @@ Product length	675
 ```
 From the last primer pairs: the Primer pair 4.
 ### kctd1
-*kctd1 (potassium channel tetramerization domain containing 1) *
+*kctd1 (potassium channel tetramerization domain containing 1)*
 
 Need to include position 3755 and 3214 of `scaffold68613`.
 
