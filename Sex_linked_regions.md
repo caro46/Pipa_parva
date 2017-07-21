@@ -162,7 +162,9 @@ vcftools --gzvcf /4/caroline/Pipa_parva/HiSeq_analysis/Pipa_chimerical_nonrecal_
 ## Primers
 
 ### NCOA2
-NCOA2 (exon2 - 180bp - from 19822 to 19992 of Scaffold1250). SNP at position 18885. Primer3 on NCBI: Forward primer from 19200 - Reverse primer to 20500 ; PCR product size: Min 500, Max 1500 ; Primer Pair Specificity Checking Parameters: Xenopus (taxid:8353) ; other parameters = default values.
+- NCOA2 (exon2 - 180bp - from 19822 to 19992 of `Scaffold1250`). 
+
+SNP at position 18885. Primer3 on NCBI: Forward primer from 19200 - Reverse primer to 20500 ; PCR product size: Min 500, Max 1500 ; Primer Pair Specificity Checking Parameters: Xenopus (taxid:8353) ; other parameters = default values.
 ```
 Primer pair 2
 	Sequence (5'->3')	Template strand	Length	Start	Stop	Tm	GC%	Self complementarity	Self 3' complementarity
@@ -170,7 +172,9 @@ Forward primer	CTGTCTGGCAAATTCACACCC	Plus	21	19327	19347	59.73	52.38	4.00	1.00
 Reverse primer	GTGTGGCCTAAAGCACCAAC	Minus	20	20131	20112	59.69	55.00	4.00	2.00
 Product length	805
 ```
-NCOA2 (exon2 - 85bp - from 18609 to 18694 of Scaffold1250). SNP at 18885. Forward primer from 18200 - Reverse primer to 19500. Other: same as previously.
+- NCOA2 (exon1 - 85bp - from 18609 to 18694 of `Scaffold1250`). 
+
+SNP at 18885. Forward primer from 18200 - Reverse primer to 19500. Other: same as previously.
 ```
 Primer pair 1
 	Sequence (5'->3')	Template strand	Length	Start	Stop	Tm	GC%	Self complementarity	Self 3' complementarity
@@ -184,6 +188,7 @@ Forward primer	CACCTACGGCTGACTGCTC	Plus	19	18210	18228	60.15	63.16	3.00	1.00
 Reverse primer	ACTGGTGGGAACAAAGGTGT	Minus	20	18991	18972	59.37	50.00	3.00	2.00
 Product length	782
 ```
+Best primer pair: Primer pair 8 (because of self complementarity).
 ### mmp16
 Need to include position 10972 of `scaffold177758`. and try to amplify the whole exon (~ position 12112..10774) and avoid position 10694. 
 
@@ -219,8 +224,8 @@ Primer pair 7
 Forward primer	GACAGACCAGCATAAGGGGA	Plus	20	10919	10938	58.80	55.00	2.00	0.00
 Reverse primer	TGCCTTTGAGTGGGGATTCA	Minus	20	11593	11574	59.22	50.00	3.00	2.00
 Product length	675
-
 ```
+From the last primer pairs: the Primer pair 4.
 ### kctd1
 Need to include position 3755 and 3214 of `scaffold68613`.
 
@@ -244,3 +249,4 @@ Forward primer	CCATCCTTAAGTTGCCGTCCT	Plus	21	3299	3319	60.07	52.38	6.00	0.00
 Reverse primer	CACCCTTTAGTCAATAAGGCCC	Minus	22	3953	3932	58.71	50.00	5.00	3.00
 Product length	655
 ```
+Best primer pair: Primer pair 4.
