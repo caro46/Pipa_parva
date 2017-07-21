@@ -428,3 +428,4 @@ N70     3163    138004
 N80     1949    196971
 N90     716     316746
 ```
+We need to blast the 1st exon of `wnt9a` on each sex-specific assembly to check if, as for the chimerical assembly, we obtain no result for any of them.
