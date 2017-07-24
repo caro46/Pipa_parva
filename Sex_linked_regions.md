@@ -56,6 +56,11 @@ blastn -evalue 1e-20 -query /4/caroline/Pipa_parva/blast_genes/wnt9a_xenbase_Xtr
 Mapped against `scaffold173038` of chimerical assembly. But cannot find the exon 1, even with:
 ```
 blastn -evalue 1e-1 -query /4/caroline/Pipa_parva/blast_genes/wnt9a_xenbase_Xtrop_e1_only.fa -db /4/caroline/2017_Pipoidea_Hiseq/Assemblies/SOAP_pipa_genome_chimerical_43mers_blastable -out /4/caroline/Pipa_parva/blast_genes/Pipa_chimerical_Xtrop_wnt9a_exon1_only_e1 -outfmt 6 -max_target_seqs 1
+
+#Trying on sex-specific (mom and dad) assemblies on Iqaluk. Still nothing for any of the assembly.
+module load blast/2.2.28+
+gunzip -c /work/cauretc/2017_pipoidea/Assemblies/SOAP_pipa_genome_mom_43mers.scafSeq.gz | makeblastdb -in - -dbtype nucl -title UCSC_xenTro9 -out /work/cauretc/2017_pipoidea/Assemblies/SOAP_pipa_genome_mom_43mers_blastable
+blastn -evalue 1e-1 -query /work/cauretc/2017_pipoidea/blast_results/wnt9a_xenbase_Xtrop_e1_only.fa -db /work/cauretc/2017_pipoidea/Assemblies/SOAP_pipa_genome_mom_43mers_blastable -out /work/cauretc/2017_pipoidea/blast_results/Pipa_mom_Xtrop_wnt9a_exon1_only_e1 -outfmt 6
 ```
 ```
 grep "scaffold173038" /4/caroline/2017_Pipoidea_Hiseq/Assemblies/SOAP_pipa_genome_chimerical_43mers_supercontigs.index
