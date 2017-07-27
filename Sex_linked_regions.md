@@ -44,6 +44,14 @@ mv /4/caroline/Pipa_parva/Rad_seq/samtools_genotypes/Sex_linked/SOAP_chim_assemb
 
 - On Chr.06: catenin beta 1 (ctnnb1) involve in wnt signaling pathway, SOX4, wnt9a ([ovarian development](http://www.sciencedirect.com/science/article/pii/S0303720706005843?via%3Dihub)).
 
+- Newly identified as W specific in *X.laevis*: scanw, on chr.6 there is also a zinc finger protein like `znf16` 
+```
+module load blast/2.2.28+
+blastn -evalue 1e-1 -query /work/cauretc/2017_pipoidea/blast_results/znf16.S_xenbase_Xlaev.fa -db /work/cauretc/2017_pipoidea/Assemblies/SOAP_pipa_genome_mom_43mers_blastable -out /work/cauretc/2017_pipoidea/blast_results/Pipa_mom_Xlaev_znf16 -outfmt 6
+blastn -evalue 1e-1 -query /work/cauretc/2017_pipoidea/blast_results/znf16.S_xenbase_Xlaev.fa -db /work/cauretc/2017_pipoidea/Assemblies/SOAP_pipa_genome_mom_43mers_blastable -out /work/cauretc/2017_pipoidea/blast_results/Pipa_mom_Xlaev_znf16_maxtarget1 -outfmt 6 -max_target_seqs 1
+blastn -evalue 1e-1 -query /work/cauretc/2017_pipoidea/blast_results/znf16.S_xenbase_Xlaev.fa -db /work/cauretc/2017_pipoidea/Assemblies/SOAP_pipa_genome_mom_43mers_blastable -out /work/cauretc/2017_pipoidea/blast_results/Pipa_mom_Xlaev_znf16_maxtarget1 -outfmt 6 -max_target_seqs 1
+blastn -evalue 1e-1 -query /work/cauretc/2017_pipoidea/blast_results/znf16.S_xenbase_Xlaev.fa -db /work/cauretc/2017_pipoidea/Assemblies/SOAP_pipa_genome_dad_43mers_blastable -out /work/cauretc/2017_pipoidea/blast_results/Pipa_dad_Xlaev_znf16_maxtarget1 -outfmt 6 -max_target_seqs 1
+```
 # HiSeq genotypes - chr.06
 - Calling genotypes from HiSeq data from dad and mom (using supercontigs of chimerical assembly as ref)
 
