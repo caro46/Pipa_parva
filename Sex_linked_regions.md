@@ -153,6 +153,20 @@ at position `10972` (52799693-52788721=10972) of the `scaffold177758` has been i
 
 Need to be carefull when designing the primers. At position 10694, heterozygous with deletions. 
 
+#### Checking with the sex-specific assembly
+```
+module load blast/2.2.28+
+gunzip -c /work/cauretc/2017_pipoidea/Assemblies/scaffold177758.fa.gz| blastn -evalue 1e-60 -query - -db /work/cauretc/2017_pipoidea/Assemblies/SOAP_pipa_genome_dad_43mers_blastable -out /work/cauretc/2017_pipoidea/blast_results/Pipa_dad_chim_scaffold177758_maxtarget1 -outfmt 6 -max_target_seqs 1
+gunzip -c /work/cauretc/2017_pipoidea/Assemblies/scaffold177758.fa.gz| blastn -evalue 1e-60 -query - -db /work/cauretc/2017_pipoidea/Assemblies/SOAP_pipa_genome_mom_43mers_blastable -out /work/cauretc/2017_pipoidea/blast_results/Pipa_mom_chim_scaffold177758_maxtarget1 -outfmt 6 -max_target_seqs 1
+gunzip -c /work/cauretc/2017_pipoidea/Assemblies/scaffold177758.fa.gz| blastn -evalue 1e-60 -query - -db /work/cauretc/2017_pipoidea/Assemblies/SOAP_pipa_genome_mom_43mers_blastable -out /work/cauretc/2017_pipoidea/blast_results/Pipa_mom_chim_scaffold177758_nomaxtarget -outfmt 6
+
+gunzip -c /work/cauretc/2017_pipoidea/Assemblies/SOAP_pipa_genome_dad_43mers.scafSeq.gz | awk -v seq="scaffold178622" -v RS='>' '$1 == seq {print RS $0}' - >/work/cauretc/2017_pipoidea/Assemblies/SOAP_pipa_genome_dad_scaffold178622.fa
+gunzip -c /work/cauretc/2017_pipoidea/Assemblies/SOAP_pipa_genome_mom_43mers.scafSeq.gz | awk -v seq="scaffold174148" -v RS='>' '$1 == seq {print RS $0}' - >/work/cauretc/2017_pipoidea/Assemblies/SOAP_pipa_genome_mom_scaffold174148.fa
+cat /work/cauretc/2017_pipoidea/Assemblies/SOAP_pipa_genome_dad_scaffold178622.fa /work/cauretc/2017_pipoidea/Assemblies/SOAP_pipa_genome_mom_scaffold174148.fa /work/cauretc/2017_pipoidea/Assemblies/scaffold177758.fa >/work/cauretc/2017_pipoidea/Assemblies/SOAP_pipa_genome_dad_mom_chim_scaffold177758.fa
+```
+Then used `MAFFT version 7` [online](mafft.cbrc.jp/alignment/software/).
+The alignment confirm the absence of the repeat of Ts in the mom. In order to use the SNP identified in the mom and dad and check for sex inheritance pattern we need to not include this region of T repeats.
+
 - Identifying if SNP in mom different from dad near `kctd1` (Chr06:94888462..94915523)
 
 `scaffold96475` had a SNP with a XY sex inheritance pattern. It blasted in a region surrounded by `kcdtd1`, `taf4b`, `ss18`, `znf521-like`. 
