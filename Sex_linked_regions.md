@@ -193,7 +193,7 @@ vcftools --gzvcf /4/caroline/Pipa_parva/HiSeq_analysis/Pipa_chimerical_nonrecal_
 
 - NCOA2 (exon2 - 180bp - from 19822 to 19992 of `Scaffold1250`). 
 
-SNP at position 18885. Primer3 on NCBI: Forward primer from 19200 - Reverse primer to 20500 ; PCR product size: Min 500, Max 1500 ; Primer Pair Specificity Checking Parameters: Xenopus (taxid:8353) ; other parameters = default values.
+SNP at position 19401. Primer3 on NCBI: Forward primer from 19200 - Reverse primer to 20500 ; PCR product size: Min 500, Max 1500 ; Primer Pair Specificity Checking Parameters: Xenopus (taxid:8353) ; other parameters = default values.
 ```
 Primer pair 2
 	Sequence (5'->3')	Template strand	Length	Start	Stop	Tm	GC%	Self complementarity	Self 3' complementarity
