@@ -218,6 +218,15 @@ Reverse primer	ACTGGTGGGAACAAAGGTGT	Minus	20	18991	18972	59.37	50.00	3.00	2.00
 Product length	782
 ```
 Best primer pair: Primer pair 8 (because of self complementarity).
+
+Designed a pair further from the SNP. Forward primer from 19100 - Reverse primer to 20200. PCR product size: Min 800, Max 1100.
+```
+Primer pair 11
+	Sequence (5'->3')	Template strand	Length	Start	Stop	Tm	GC%	Self complementarity	Self 3' complementarity
+Forward primer	TGTAAAATCGCAACCACGACA	Plus	21	19253	19273	58.79	42.86	3.00	0.00
+Reverse primer	TGGCACTGATGAAAAAGCACTG	Minus	22	20127	20106	59.97	45.45	3.00	3.00
+Product length	875
+```
 ### mmp16
 *mmp16 (matrix metallopeptidase 16): [expressed in the rat testis](http://www.reproduction-online.org/content/134/3/455.full.pdf), [one of DMRT1-bound genes](http://www.pnas.org/content/107/30/13360.full.pdf)*
 
@@ -257,6 +266,15 @@ Reverse primer	TGCCTTTGAGTGGGGATTCA	Minus	20	11593	11574	59.22	50.00	3.00	2.00
 Product length	675
 ```
 From the last primer pairs: the Primer pair 4.
+
+New primers further from SNP. Forward primer from 10700 - Reverse primer to 12100. PCR product size: Min 800, Max 1500.
+```
+Primer pair 4
+	Sequence (5'->3')	Template strand	Length	Start	Stop	Tm	GC%	Self complementarity	Self 3' complementarity
+Forward primer	AGTCGCTCCCACTGTCATTTT	Plus	21	10742	10762	59.93	47.62	3.00	0.00
+Reverse primer	TGGACAACACAGCAAGCACT	Minus	20	11937	11918	60.39	50.00	2.00	2.00
+Product length	1196
+```
 ### kctd1
 *kctd1 (potassium channel tetramerization domain containing 1)*
 
@@ -283,3 +301,12 @@ Reverse primer	CACCCTTTAGTCAATAAGGCCC	Minus	22	3953	3932	58.71	50.00	5.00	3.00
 Product length	655
 ```
 Best primer pair: Primer pair 4.
+
+Checked with geneious, the forward primer is too close from the 1st SNP. Seems like the fasta file needs to not contained the name in the fasta sequence for the NCBI version otherwise the location of the primers is wrong. Designed a new pair (without `>scaffold68613 28.4` in the fasta file on NCBI) that seems better:
+```
+Primer pair 9
+	Sequence (5'->3')	Template strand	Length	Start	Stop	Tm	GC%	Self complementarity	Self 3' complementarity
+Forward primer	ATGTAGTGGTTGCCTTGTGCC	Plus	21	3142	3162	61.16	52.38	2.00	1.00
+Reverse primer	GCTCCAGTCCCAAGTCATAGT	Minus	21	3866	3846	59.17	52.38	2.00	1.00
+Product length	725
+```
