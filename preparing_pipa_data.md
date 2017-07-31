@@ -470,6 +470,12 @@ Bases Processed:      41796m    11.80m bases/sec
 ```
 /work/cauretc/programs/FastQC/fastqc -o /work/cauretc/2017_pipoidea/fastqc_quality /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/*bbduk.fq.gz
 ```
+Does not have solved the issue.
+
+Focusing on the kmers
+```
+./bbduk.sh in1=/work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/CSL6209_skewer-trimmed-pair1.fastq.gz in2=/work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/CSL6209_skewer-trimmed-pair2.fastq.gz out1=/work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/CSL6209_R1_bbduk_kmerphix.fq.gz out2=/work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/CSL6209_R2_bbduk_kmerphix.fq.gz ref=resources/phix_adapters.fa.gz hdist=1 stats=stats.txt
+```
 ## Jellyfish/quake
 For some reason cannot install on sharnet whereas no issue on info...
 ```
