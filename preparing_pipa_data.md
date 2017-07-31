@@ -421,7 +421,7 @@ scythe -a /work/cauretc/programs/Trimmomatic-0.36/adapters/Pipoidea_TruSeqPE_fas
 ```
 Scythe seems to have resolved my k-mer issues. Let's use the data obtained from trimming with trimmomatic + scythe as input for quake.
 
-
+## Skewer
 [AdapterRemoval v2](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4751634/), [github page](https://github.com/MikkelSchubert/adapterremoval/), seems to be a pretty good program to try if `scythe` does not work as well as expected. Couldn't easily install it on Sharcnet so try [skewer](https://github.com/relipmoc/skewer)
 
 
@@ -434,6 +434,17 @@ java -jar AlienTrimmer.jar -if /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genom
 ```
 Sounds like an issue with using gzipped files.
 Try also using `<(zcat the_gzipped_file)` and `<(gzip -c the_gzipped_file)` without success. If I unzipped the files they will be huge so let's forget this software.
+
+## [bbduk](http://jgi.doe.gov/data-and-tools/bbtools/bb-tools-user-guide/bbduk-guide/)
+
+From the website:
+
+*“Duk” stands for Decontamination Using Kmers. BBDuk was developed to combine most common data-quality-related trimming, filtering, and masking operations into a single high-performance tool. It is capable of quality-trimming and filtering, adapter-trimming, contaminant-filtering via kmer matching, sequence masking, GC-filtering, length filtering, entropy-filtering, format conversion, histogram generation, subsampling, quality-score recalibration, kmer cardinality estimation, and various other operations in a single pass. Specifically, any combination of operations is possible in a single pass, with the exception of kmer-based operations (kmer trimming, kmer masking, or kmer filtering); at most 1 kmer-based operation can be done in a single pass. BBDuk2 allows multiple kmer-based operations in a single pass, and is otherwise equivalent to BBDuk.*
+
+```
+./bbduk.sh in1=/work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/CSL6209_skewer-trimmed-pair1.fastq.gz in2=/work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/CSL6209_skewer-trimmed-pair2.fastq.gz out1=/work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/CSL6209_R1_bbduk.fq.gz out2=/work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/CSL6209_R2_bbduk.fq.gz ref=/work/cauretc/programs/Trimmomatic-0.36/adapters/Pipoidea_TruSeqPE_fastqc_adapters_Wilson.fa ktrim=l k=23 mink=11 hdist=1 tpe tbo
+```
+
 ## Jellyfish/quake
 For some reason cannot install on sharnet whereas no issue on info...
 ```
