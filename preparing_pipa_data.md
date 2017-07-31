@@ -444,7 +444,32 @@ From the website:
 ```
 ./bbduk.sh in1=/work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/CSL6209_skewer-trimmed-pair1.fastq.gz in2=/work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/CSL6209_skewer-trimmed-pair2.fastq.gz out1=/work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/CSL6209_R1_bbduk.fq.gz out2=/work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/CSL6209_R2_bbduk.fq.gz ref=/work/cauretc/programs/Trimmomatic-0.36/adapters/Pipoidea_TruSeqPE_fastqc_adapters_Wilson.fa ktrim=l k=23 mink=11 hdist=1 tpe tbo
 ```
+```
+BBDuk version 37.36
+maskMiddle was disabled because useShortKmers=true
+Initial:
+Memory: max=164657m, free=161221m, used=3436m
 
+Added 30271 kmers; time:        0.107 seconds.
+Memory: max=164657m, free=153489m, used=11168m
+
+Input is being processed as paired
+Started output streams: 0.124 seconds.
+Processing time:                3540.795 seconds.
+
+Input:                          295159444 reads                 41796350800 bases.
+KTrimmed:                       570028 reads (0.19%)    6801269 bases (0.02%)
+Trimmed by overlap:             798140 reads (0.27%)    27761733 bases (0.07%)
+Total Removed:                  2258 reads (0.00%)      34563002 bases (0.08%)
+Result:                         295157186 reads (100.00%)       41761787798 bases (99.92%)
+
+Time:                           3541.050 seconds.
+Reads Processed:        295m    83.35k reads/sec
+Bases Processed:      41796m    11.80m bases/sec
+```
+```
+/work/cauretc/programs/FastQC/fastqc -o /work/cauretc/2017_pipoidea/fastqc_quality /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/*bbduk.fq.gz
+```
 ## Jellyfish/quake
 For some reason cannot install on sharnet whereas no issue on info...
 ```
