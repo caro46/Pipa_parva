@@ -511,11 +511,13 @@ zcat /4/caroline/2017_Pipoidea_Hiseq/after_scythe/CSL6209_*_trim_paired_Scythe.f
 /home/caroline/programs/jellyfish-2.2.4/bin/jellyfish dump -c -t /4/caroline/2017_Pipoidea_Hiseq/jellyfish/after_scythe/CSL6209_jelly_count_19mers -o /4/caroline/2017_Pipoidea_Hiseq/jellyfish/after_scythe/CSL6209_jelly_dump_19mers
 /usr/local/quake/bin/cov_model.py --int /4/caroline/2017_Pipoidea_Hiseq/jellyfish/after_scythe/CSL6209_jelly_dump_19mers
 ```
-Cutoff obtained: BJE4294: 2; BJE4295: 2; CSL6209:.
+Cutoff obtained: BJE4294: 2; BJE4295: 2; CSL6209: 1.
 ```
 /usr/local/quake/bin/correct -f /4/caroline/2017_Pipoidea_Hiseq/quake/filenames_quake_pipa_female.txt -z -k 19 -c 2 -m /4/caroline/2017_Pipoidea_Hiseq/jellyfish/after_scythe/BJE4294_jelly_dump_19mers -p 4
 
 /usr/local/quake/bin/correct -f /4/caroline/2017_Pipoidea_Hiseq/quake/filenames_quake_pipa_male.txt -z -k 19 -c 2 -m /4/caroline/2017_Pipoidea_Hiseq/jellyfish/after_scythe/BJE4295_jelly_dump_19mers -p 4
+
+/usr/local/quake/bin/correct -f /4/caroline/2017_Pipoidea_Hiseq/quake/filenames_quake_rhyno.txt -z -k 19 -c 1 -m /4/caroline/2017_Pipoidea_Hiseq/jellyfish/after_scythe/CSL6209_jelly_dump_19mers -p 4
 ```
 For some reason, `cov_model.py` does not work whereas it was fine for *Hymenochirus*. So turns out it is because of the version of the `VGAM` library (`VGAM_1.0-0` works, `VGAM_1.0-3` does not).
 ```R
