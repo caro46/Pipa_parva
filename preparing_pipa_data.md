@@ -476,6 +476,13 @@ Focusing on the kmers
 ```
 ./bbduk.sh in1=/work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/CSL6209_skewer-trimmed-pair1.fastq.gz in2=/work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/CSL6209_skewer-trimmed-pair2.fastq.gz out1=/work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/CSL6209_R1_bbduk_kmerphix.fq.gz out2=/work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/CSL6209_R2_bbduk_kmerphix.fq.gz ref=resources/phix_adapters.fa.gz hdist=1 stats=stats.txt
 ```
+
+Nothing of what I tried get rid of the kmer failure on Fastqc. On discussion websites, people seem to not pay a lot of intention to this plot if the other criteria of FastQC are OK (which is the case for us). So I'll go with it using the results from the same 2 softwares used for Pipa (trimmomatic and Scythe) as input for Quake. As a reminder I firstly didn't directly go with Quake for *Rhinophrynus* because Quake mostly deals with under-represented k-mers representing potential sequencing errors whereas on FastQC it is over-represented k-mers (due to contaminations or duplication or etc...).
+
+Making some space on sharcnet, compressed the trimmed files unused for now
+```
+tar -czvf CSL6209_bbduk_skewer.tar.gz *bbduk* CSL6209_skewer*
+```
 ## Jellyfish/quake
 For some reason cannot install on sharnet whereas no issue on info...
 ```
