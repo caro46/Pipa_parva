@@ -11,8 +11,30 @@ Mugsy is for closely related species which is not really our case.
 
 3- [Mauve](http://darlinglab.org/mauve/user-guide/introduction.html) and [mafft](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC135756/)
 
-Mauve: local multiple alignments, *identifies conserved genomic regions, rearrangements and inversions in conserved regions, and the exact sequence breakpoints of such rearrangements across multiple genomes*
+Mauve (`2.3.1` on info): local multiple alignments, *identifies conserved genomic regions, rearrangements and inversions in conserved regions, and the exact sequence breakpoints of such rearrangements across multiple genomes*, large-scale evolutionary events.
+
+```
+/usr/local/mauve/current/mauveAligner [options] <seq1 filename> ... --output=pipoidea.mauve --output-alignment=pipoidea.alignment --scratch-path=<path> 
+```
+`--scratch-path` for large genomes
+
+`--alignment-output-format=phylip` to be input for MAFFT.
+
+MAFFT (`v7.205` on info) might improved the alignment obtained from Mauve. Default MAFFT output is fasta so good for Gblock.
+
+```
+mafft --threats 8
+```
 
 
 Maybe considering MULAN or PECAN or TBA
- 
+
+4- [Gblocks](http://molevol.cmima.csic.es/castresana/Gblocks/Gblocks_documentation.html)
+
+Version `0.91b` on info.
+
+To remove bad aligned sequences, too diverged/non informative sequences. 
+
+```
+/usr/local/Gblocks [alignment_name]
+```
