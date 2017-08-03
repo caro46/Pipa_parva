@@ -542,4 +542,6 @@ dev.off()
 #legend('topright',c("Female BJE3814","Male BJE3815"),lty=c(1,1),lwd=c(2.5,2.5),col=c("pink","blue"))
 #dev.off()
 ```
-We will need to set different values for the cutoff for Pipa and Rhyno
+We will need to set different values for the cutoff for Pipa and Rhyno.
+
+For *Rhinophrynus*, the `FastQC` results are not that great: still same pattern with the k-mers (failure), warning for Per tile sequence, Per base sequence content and sequence length distribution (which is normal after trimming). Basically except the k-mers it looks OK (Per tile not as good for R2 but still OK). We will go with it and try to make an [assembly](https://github.com/caro46/Pipa_parva/blob/master/pipa_rhyno.md) (a lot of people had issues with K-mer distribution and if everything else is OK, like us, they go with it). 
