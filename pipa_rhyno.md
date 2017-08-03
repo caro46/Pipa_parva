@@ -1,6 +1,6 @@
 ## 1- De novo assemblies 
 
-### [**Pipa parva**](https://github.com/caro46/Pipa_parva/blob/master/assembly.md)
+### [*Pipa parva*](https://github.com/caro46/Pipa_parva/blob/master/assembly.md)
 
 ### *Rhinophrynus*
 ```
