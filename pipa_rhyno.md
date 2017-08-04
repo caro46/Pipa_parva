@@ -7,8 +7,10 @@
 /work/cauretc/programs/SOAPdenovo2-src-r240/SOAPdenovo-63mer all -s /work/cauretc/2017_pipoidea/rhyno.config -K 43 -R -V -p 10 -F -o /work/cauretc/2017_pipoidea/Assemblies/SOAP_rhyno_genome_43mers 1>scaff_rhyno.log 2>scaff_rhyno.err
 #Segmentation fault
 
-/work/cauretc/programs/SOAPdenovo2-src-r240/SOAPdenovo-63mer all -s /work/cauretc/2017_pipoidea/rhyno.config -K 43 -R -V -p 10 -o /work/cauretc/2017_pipoidea/Assemblies/SOAP_rhyno_genome_43mers 1>scaff_rhyno.log 2>scaff_rhyno.err
+/work/cauretc/programs/SOAPdenovo2-src-r240/SOAPdenovo-63mer all -s /work/cauretc/2017_pipoidea/rhyno.config -K 43 -R -V -p 10 -o /work/cauretc/2017_pipoidea/Assemblies/SOAP_rhyno_genome_43mers 1>ass_rhyno.log 2>ass_rhyno.err
 ```
+Failed with `Cannot open /work/cauretc/2017_pipoidea/Assemblies/SOAP_rhyno_genome_43mers.peGrads. Now exit to system...` but the file is in the good directory... Since there was issue with Sharcnet yesterday, let's delete everything and start again (same command used).
+
 ## 2- Mugsy - not used
 
 With all the *de novo* assemblies from Hymenochirus/Pipa/Rhyno and the 2 references genomes *X. tropicalis* and *X. laevis*.
