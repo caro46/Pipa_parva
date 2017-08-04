@@ -9,7 +9,7 @@
 
 /work/cauretc/programs/SOAPdenovo2-src-r240/SOAPdenovo-63mer all -s /work/cauretc/2017_pipoidea/rhyno.config -K 43 -R -V -p 10 -o /work/cauretc/2017_pipoidea/Assemblies/SOAP_rhyno_genome_43mers 1>ass_rhyno.log 2>ass_rhyno.err
 ```
-Failed with `Cannot open /work/cauretc/2017_pipoidea/Assemblies/SOAP_rhyno_genome_43mers.peGrads. Now exit to system...` but the file is in the good directory... Since there was issue with Sharcnet yesterday, let's delete everything and start again (same command used). Might need to rerun it later today (Aug 4) or tomorrow because of issues on the server.
+Failed with `Cannot open /work/cauretc/2017_pipoidea/Assemblies/SOAP_rhyno_genome_43mers.peGrads. Now exit to system...` but the file is in the good directory... Since there was issue with Sharcnet yesterday, let's delete everything and start again (same command used). Might need to rerun it later today (Aug 4) or tomorrow because of issues on the server. Ended with `Bus error`. Need to wait the issue on the servor to be solved.
 
 ## 2- Mugsy - not used
 
