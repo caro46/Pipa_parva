@@ -13,7 +13,10 @@
 Failed with `Cannot open /work/cauretc/2017_pipoidea/Assemblies/SOAP_rhyno_genome_43mers.peGrads. Now exit to system...` but the file is in the good directory... Since there was issue with Sharcnet yesterday, let's delete everything and start again (same command used). Might need to rerun it later today (Aug 4) or tomorrow because of issues on the server. Ended with `Bus error`. Need to wait the issue on the servor to be solved. Ended again with `Segmentation fault`; tried with a bigger k-mer size (simplify the graph)
 ```
 /work/cauretc/programs/SOAPdenovo2-src-r240/SOAPdenovo-63mer all -s /work/cauretc/2017_pipoidea/rhyno.config -K 63 -R -V -p 10 -o /work/cauretc/2017_pipoidea/Assemblies/SOAP_rhyno_genome_63mers 1>ass_rhyno.log 2>ass_rhyno.err
-
+#Bus error
+```
+Server failed, cannot access any file (`permission denied`on Aug 7). Need to be rerun later.
+```
 /work/cauretc/programs/SOAPdenovo2-src-r240/SOAPdenovo-63mer scaff -g /work/cauretc/2017_pipoidea/Assemblies/SOAP_rhyno_genome_63mers -F -p 10 1 >scaff_rhyno.log 2>scaff_rhyno.err
 ```
 ## 2- Mugsy - not used
