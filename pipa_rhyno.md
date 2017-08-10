@@ -16,6 +16,7 @@ Failed with `Cannot open /work/cauretc/2017_pipoidea/Assemblies/SOAP_rhyno_genom
 #Bus error
 ```
 Server failed, cannot access any file (`permission denied`on Aug 7). Need to be rerun later (issues because of unpredicted shutdown, can take a while to fix everything).
+Again `Segmentation fault`.
 ```
 /work/cauretc/programs/SOAPdenovo2-src-r240/SOAPdenovo-63mer scaff -g /work/cauretc/2017_pipoidea/Assemblies/SOAP_rhyno_genome_63mers -F -p 10 1 >scaff_rhyno.log 2>scaff_rhyno.err
 ```
