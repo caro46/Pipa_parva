@@ -262,6 +262,13 @@ Only_daughters_ZW scaffold_51   996425  G       T/T     ./.     ./.     ./.     
 *X. tropicalis* scaffold_51 996407..996425 = Chromosome 1 *X. laevis* (in intron of npffr2?)
 
 # HiSeq
+
+## Checking download
+```
+md5sum BJE429*_S2*_L003_R*_001.fastq.gz >check_pipa_md5
+md5sum CSL6209*_S22_L003_R*_001.fastq.gz >check_rhyno_md5
+```
+Numbers in `check_pipa_md5` and `check_rhyno_md5`, and the `md5z` from the sequencing center are the same. So no issue during the downloading.
 ## Sequence quality 
 ```
 /work/cauretc/programs/FastQC/fastqc -o /work/cauretc/2017_pipoidea/fastqc_quality /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/*.fastq.gz
