@@ -28,6 +28,7 @@ module unload intel mkl openmpi
 module load gcc/4.9.2
 module load openmpi/gcc492-std/1.8.7
 module load boost/gcc492-openmpi187std/1.59.0
+export PATH=/work/ben/abyss/bin:$PATH
 
 abyss-pe np=8 name=CSL6209 k=64 in='/work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/CSL6209_S22_L003_R1_001_trim_paired_Scythe.cor.fastq.gz /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/CSL6209_S22_L003_R2_001_trim_paired_Scythe.cor.fastq.gz'
 ```
@@ -42,7 +43,7 @@ make: *** Deleting file `CSL6209-3.dist'
 ``` 
 Suggestions from [here](https://groups.google.com/forum/#!topic/abyss-users/x8Wd0tEnyIw) to change the Environment Variables and redirect the temporary directory to somewhere with more space 
 ```
-TMPDIR=/scratch/cauretc/temp
+export TMPDIR=/scratch/cauretc/temp
 ```
 ## 2- Mugsy - not used
 
