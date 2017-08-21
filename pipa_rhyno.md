@@ -24,6 +24,11 @@ Tried to run the SOAP de novo assembly multiple times since the server is stable
 
 Trying with Abyss:
 ```
+module unload intel mkl openmpi
+module load gcc/4.9.2
+module load openmpi/gcc492-std/1.8.7
+module load boost/gcc492-openmpi187std/1.59.0
+
 abyss-pe np=8 name=CSL6209 k=64 in='/work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/CSL6209_S22_L003_R1_001_trim_paired_Scythe.cor.fastq.gz /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/CSL6209_S22_L003_R2_001_trim_paired_Scythe.cor.fastq.gz'
 ```
 ```
