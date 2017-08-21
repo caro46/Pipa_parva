@@ -20,6 +20,25 @@ Again `Segmentation fault`.
 ```
 /work/cauretc/programs/SOAPdenovo2-src-r240/SOAPdenovo-63mer scaff -g /work/cauretc/2017_pipoidea/Assemblies/SOAP_rhyno_genome_63mers -F -p 10 1 >scaff_rhyno.log 2>scaff_rhyno.err
 ```
+Tried to run the SOAP de novo assembly multiple times since the server is stable (3 times since the server fixation) using different values of kmers to try to use less memory but keep having `Segmentation fault`. 
+
+Trying with Abyss:
+```
+abyss-pe np=8 name=CSL6209 k=64 in='/work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/CSL6209_S22_L003_R1_001_trim_paired_Scythe.cor.fastq.gz /work/cauretc/2017_pipoidea/2017_Pipa_Rhino_genomes/CSL6209_S22_L003_R2_001_trim_paired_Scythe.cor.fastq.gz'
+```
+```
+Building the suffix array...
+Building the Burrows-Wheeler transform...
+Building the character occurrence table...
+sort: write failed: /tmp/sortjgKeIs: No space left on device
+error: `CSL6209-3.hist': No such file or directory
+make: *** [CSL6209-3.dist] Error 1
+make: *** Deleting file `CSL6209-3.dist'
+``` 
+Suggestions from [here](https://groups.google.com/forum/#!topic/abyss-users/x8Wd0tEnyIw) to change the Environment Variables and redirect the temporary directory to somewhere with more space 
+```
+TMPDIR=/scratch/cauretc/temp
+```
 ## 2- Mugsy - not used
 
 With all the *de novo* assemblies from Hymenochirus/Pipa/Rhyno and the 2 references genomes *X. tropicalis* and *X. laevis*.
