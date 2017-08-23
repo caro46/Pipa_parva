@@ -45,6 +45,22 @@ Suggestions from [here](https://groups.google.com/forum/#!topic/abyss-users/x8Wd
 ```
 export TMPDIR=/scratch/cauretc/temp
 ```
+```
+libgomp: Thread creation failed: Resource temporarily unavailable
+Mateless   0
+Unaligned  0
+Singleton  0
+FR         0
+RF         0
+FF         0
+Different  0
+Total      0
+abyss-fixmate: error: All reads are mateless. This can happen when first and second read IDs do not match.
+error: `CSL6209-3.hist': No such file or directory
+make: *** [CSL6209-3.dist] Error 1
+make: *** Deleting file `CSL6209-3.dist'
+```
+
 ## 2- Mugsy - not used
 
 With all the *de novo* assemblies from Hymenochirus/Pipa/Rhyno and the 2 references genomes *X. tropicalis* and *X. laevis*.
