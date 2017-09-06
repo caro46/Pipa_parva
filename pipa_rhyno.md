@@ -61,6 +61,56 @@ make: *** [CSL6209-3.dist] Error 1
 make: *** Deleting file `CSL6209-3.dist'
 ```
 
+Deleted everything from the folder `/work/cauretc/2017_pipoidea/Assemblies/abyss/` to start again from scratch (Sept. 5) but ended (Sept. 6) with
+```
+[iqaluk:03683] *** Process received signal ***
+[iqaluk:03683] Signal: Bus error (7)
+[iqaluk:03683] Signal code: Non-existant physical address (2)
+[iqaluk:03683] Failing at address: 0x7fbdf4ebe006
+[iqaluk:03683] [ 0] /lib64/libc.so.6[0x3d40432660]
+[iqaluk:03683] [ 1] /lib64/libc.so.6(memcpy+0x15b)[0x3d4048995b]
+[iqaluk:03683] [ 2] /opt/sharcnet/openmpi/1.8.7/gcc-4.9.2/std/lib/openmpi/mca_btl_vader.so(+0x2639)[0x7fbdf75ed639]
+[iqaluk:03683] [ 3] /opt/sharcnet/openmpi/1.8.7/gcc-4.9.2/std/lib/openmpi/mca_pml_ob1.so(mca_pml_ob1_send_request_start_prepare+0x43)[0x7fbdf69222e3]
+[iqaluk:03683] [ 4] /opt/sharcnet/openmpi/1.8.7/gcc-4.9.2/std/lib/openmpi/mca_pml_ob1.so(mca_pml_ob1_send+0x848)[0x7fbdf6917948]
+[iqaluk:03683] [ 5] /opt/sharcnet/openmpi/1.8.7/gcc-4.9.2/std/lib/libmpi.so.1(MPI_Send+0x153)[0x7fc06199d9e3]
+[iqaluk:03683] [ 6] ABYSS-P[0x414553]
+[iqaluk:03683] [ 7] ABYSS-P[0x4323bc]
+[iqaluk:03683] [ 8] ABYSS-P[0x432249]
+[iqaluk:03683] [ 9] ABYSS-P[0x431f6f]
+[iqaluk:03683] [10] ABYSS-P[0x41d763]
+[iqaluk:03683] [11] ABYSS-P[0x427e30]
+[iqaluk:03683] [12] ABYSS-P[0x42306d]
+[iqaluk:03683] [13] ABYSS-P[0x417fcb]
+[iqaluk:03683] [14] ABYSS-P[0x4182c9]
+[iqaluk:03683] [15] ABYSS-P[0x405f64]
+[iqaluk:03683] [16] /lib64/libc.so.6(__libc_start_main+0xfd)[0x3d4041ed1d]
+[iqaluk:03683] [17] ABYSS-P[0x405769]
+[iqaluk:03683] *** End of error message ***
+--------------------------------------------------------------------------
+mpirun noticed that process rank 1 with PID 3683 on node iqaluk exited on signal 7 (Bus error).
+--------------------------------------------------------------------------
+make: *** [CSL6209-1.fa] Error 135
+```
+Then tried to run again (no file in my `/scratch/cauretc/temp/`) and directly stopped with
+```
+[iqaluk.sharcnet.ca:14769] opal_os_dirpath_create: Error: Unable to create the sub-directory (/scratch/cauretc/temp/openmpi-sessions-cauretc@iqaluk_0) of (/scratch/cauretc/temp/openmpi-sessions-cauretc@iqaluk_0/14457/0/0), mkdir failed [1]
+[iqaluk.sharcnet.ca:14769] [[14457,0],0] ORTE_ERROR_LOG: Error in file ../../openmpi-1.8.7/orte/util/session_dir.c at line 107
+[iqaluk.sharcnet.ca:14769] [[14457,0],0] ORTE_ERROR_LOG: Error in file ../../openmpi-1.8.7/orte/util/session_dir.c at line 402
+[iqaluk.sharcnet.ca:14769] [[14457,0],0] ORTE_ERROR_LOG: Error in file ../../../../../openmpi-1.8.7/orte/mca/ess/hnp/ess_hnp_module.c at line 638
+--------------------------------------------------------------------------
+It looks like orte_init failed for some reason; your parallel process is
+likely to abort.  There are many reasons that a parallel process can
+fail during orte_init; some of which are due to configuration or
+environment problems.  This failure appears to be an internal failure;
+here's some additional information (which may only be relevant to an
+Open MPI developer):
+
+  orte_session_dir failed
+  --> Returned value Error (-1) instead of ORTE_SUCCESS
+--------------------------------------------------------------------------
+make: *** [CSL6209-1.fa] Error 213
+```
+Not sure what is going on and a lot of recent issues on multiple servers so started again on `wob101` (Sept. 6) - before I was running on `iqaluk`.
 ## 2- Mugsy - not used
 
 With all the *de novo* assemblies from Hymenochirus/Pipa/Rhyno and the 2 references genomes *X. tropicalis* and *X. laevis*.
