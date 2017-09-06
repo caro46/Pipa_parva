@@ -61,7 +61,7 @@ make: *** [CSL6209-3.dist] Error 1
 make: *** Deleting file `CSL6209-3.dist'
 ```
 
-Deleted everything from the folder `/work/cauretc/2017_pipoidea/Assemblies/abyss/` to start again from scratch (Sept. 5) but ended (Sept. 6) with
+Deleted everything from the folder `/work/cauretc/2017_pipoidea/Assemblies/abyss/` to start again from scratch (Sept. 5) and using `np=4` but ended (Sept. 6) with
 ```
 [iqaluk:03683] *** Process received signal ***
 [iqaluk:03683] Signal: Bus error (7)
