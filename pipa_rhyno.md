@@ -111,7 +111,7 @@ Open MPI developer):
 make: *** [CSL6209-1.fa] Error 213
 ```
 Not sure what is going on and a lot of recent issues on multiple servers so started again on `wob101` (Sept. 6) - before I was running on `iqaluk`.
-So `wobbie` is still on unstable set up. The run seems to take forever and right now (Sept.7) no file has been produced. Maybe need to switch again to another server.
+So `wobbie` is still on unstable set up. The run seems to take forever and right now (Sept.7) no file has been produced. Maybe need to switch again to another server. Killed the job on `wobbie` (nothing was happening and other people also switched because they couldn't run their jobs) and run again on `iqaluk` (Sept.8).
 
 Interesting discussion [here](https://github.com/bcgsc/abyss/issues/104) about empty `.hist` files. 
 ## 2- Mugsy - not used
