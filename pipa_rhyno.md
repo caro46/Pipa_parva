@@ -114,6 +114,24 @@ Not sure what is going on and a lot of recent issues on multiple servers so star
 So `wobbie` is still on unstable set up. The run seems to take forever and right now (Sept.7) no file has been produced. Maybe need to switch again to another server. Killed the job on `wobbie` (nothing was happening and other people also switched because they couldn't run their jobs) and run again on `iqaluk` (Sept.8).
 
 Interesting discussion [here](https://github.com/bcgsc/abyss/issues/104) about empty `.hist` files. 
+
+Iqaluk (Sept.12): assembly seems to continue running pretty well
+```
+Mateless           0
+Unaligned    2288333  1.56%
+Singleton   18519513  12.6%
+FR          54510728  37.2%
+RF              7373  0.00503%
+FF             11599  0.00792%
+Different   71106123  48.6%
+Total      146443669
+```
+From a [forum](https://groups.google.com/forum/#!topic/abyss-users/bCBAHHn5mQY) (answer from Shaun Jackman to an inquiry about abyss mapping statistics):
+
+*The alignment stats look okay. They indicate that ~11% of the pairs align to the same contig and ~80% align to different contigs, which is likely a result of having small initial contigs due to low coverage.*
+
+This person obtained ~80% Different. Our statistics seem pretty OK too compared to hers (by using the k-mer distribution from `Quake` I already knew about the low coverage). 
+
 ## 2- Mugsy - not used
 
 With all the *de novo* assemblies from Hymenochirus/Pipa/Rhyno and the 2 references genomes *X. tropicalis* and *X. laevis*.
