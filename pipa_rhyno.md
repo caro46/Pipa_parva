@@ -153,10 +153,13 @@ The statistics look weird: no real improvement between the different steps of as
 
 With all the *de novo* assemblies from Hymenochirus/Pipa/Rhyno and the 2 references genomes *X. tropicalis* and *X. laevis*.
 ```
-/usr/local/mugsy/mugsy -duplications 1 --directory /home/caroline/hymeno/MUGSY --prefix Mugsy_alignment_BJE3814_BJE3815 /4/caroline/tropicalis_genome/Xtropicalis_v9_repeatMasked_HARD_MASK.fa /4/caroline/laevis_genome/Xla.v91_repeatMasked_HARD_MASK.fa /home/caroline/hymeno/MUMMER_analysis/BJE3814-8.fa /home/caroline/hymeno/MUMMER_analysis/BJE3815-8.fa
+/usr/local/mugsy/mugsy -duplications 1 --directory /home/caroline/hymeno/MUGSY --prefix Mugsy_alignment_BJE3814_BJE3815 /4/caroline/tropicalis_genome/Xtropicalis_v9_repeatMasked_HARD_MASK.fa /4/caroline/laevis_genome/Xla.v91_repeatMasked_HARD_MASK.fa /home/caroline/hymeno/MUMMER_analysis/BJE3814-8.fa /home/caroline/hymeno/MUMMER_analysis/BJE3815-8.fa 
 ```
 
 Mugsy is for closely related species which is not really our case.
+```
+/usr/local/mugsy/mugsy -duplications 1 --directory /4/caroline/2017_Pipoidea_Hiseq/alignment --prefix Mugsy_alignment_pipid /4/caroline/tropicalis_genome/Xtropicalis_v9_repeatMasked_HARD_MASK.fa /4/caroline/laevis_genome/Xla.v91_repeatMasked_HARD_MASK1.fa /home/caroline/hymeno/MUMMER_analysis/BJE3814-8.fa /home/caroline/hymeno/MUMMER_analysis/BJE3815-8.fa /4/caroline/2017_Pipoidea_Hiseq/Assemblies/Pipa_sex_specific/SOAP_pipa_genome_dad_43mers.scafSeq.gz /4/caroline/2017_Pipoidea_Hiseq/Assemblies/Pipa_sex_specific/SOAP_pipa_genome_mom_43mers.scafSeq.gz /4/caroline/2017_Pipoidea_Hiseq/Assemblies/Rhynophrinus/abyss/CSL6209-8.fa.gz 
+```
 
 ## 3- [Mauve](http://darlinglab.org/mauve/user-guide/introduction.html) and [mafft](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC135756/)
 
@@ -180,9 +183,12 @@ Maybe considering MULAN or PECAN or TBA
 
 ### Commands used
 ```
-/usr/local/mauve/current/mauveAligner /4/caroline/tropicalis_genome/Xtropicalis_v9_repeatMasked_HARD_MASK.fa /4/caroline/laevis_genome/Xla.v91_repeatMasked_HARD_MASK.fa /4/caroline/2017_Pipoidea_Hiseq/Assemblies/Pipa_sex_specific/SOAP_pipa_genome_dad_43mers.scafSeq.gz /4/caroline/2017_Pipoidea_Hiseq/Assemblies/Pipa_sex_specific/SOAP_pipa_genome_mom_43mers.scafSeq.gz /home/caroline/hymeno/MUMMER_analysis/BJE3814-8.fa /home/caroline/hymeno/MUMMER_analysis/BJE3815-8.fa --output=/4/caroline/2017_Pipoidea_Hiseq/alignment/pipoidea.mauve --output-alignment=/4/caroline/2017_Pipoidea_Hiseq/alignment/pipoidea.alignment --scratch-path=/4/caroline/temp --alignment-output-dir /4/caroline/2017_Pipoidea_Hiseq/alignment --alignment-output-format=phylip
+/usr/local/mauve/current/mauveAligner /4/caroline/tropicalis_genome/Xtropicalis_v9_repeatMasked_HARD_MASK.fa /4/caroline/laevis_genome/Xla.v91_repeatMasked_HARD_MASK1.fa /4/caroline/2017_Pipoidea_Hiseq/Assemblies/Pipa_sex_specific/SOAP_pipa_genome_dad_43mers.scafSeq.gz /4/caroline/2017_Pipoidea_Hiseq/Assemblies/Pipa_sex_specific/SOAP_pipa_genome_mom_43mers.scafSeq.gz /home/caroline/hymeno/MUMMER_analysis/BJE3814-8.fa /home/caroline/hymeno/MUMMER_analysis/BJE3815-8.fa --output=/4/caroline/2017_Pipoidea_Hiseq/alignment/pipoidea.mauve --output-alignment=/4/caroline/2017_Pipoidea_Hiseq/alignment/pipoidea.alignment --scratch-path=/4/caroline/temp --alignment-output-dir /4/caroline/2017_Pipoidea_Hiseq/alignment --alignment-output-format=phylip
 ```
 Obtained an expected `Segmentation fault`(Sept13).
+```
+muscle -in seqs.fa -out seqs.afa -maxiters 2
+```
 ## 4- [Gblocks](http://molevol.cmima.csic.es/castresana/Gblocks/Gblocks_documentation.html)
 
 Version `0.91b` on info.
