@@ -132,6 +132,16 @@ From a [forum](https://groups.google.com/forum/#!topic/abyss-users/bCBAHHn5mQY) 
 
 This person obtained ~80% Different. Our statistics seem pretty OK too compared to hers (by using the k-mer distribution from `Quake` I already knew about the low coverage). 
 
+**Sept.13:** The abyss assembly finally finished.
+```
+more /work/cauretc/2017_pipoidea/Assemblies/abyss/CSL6209-stats.tab
+n	n:500	L50	min	N80	N50	N20	E-size	max	sum	name
+18.34e6	2280326	725754	500	676	1020	1642	1211	13093	2.198e9	CSL6209-unitigs.fa
+18.24e6	2278791	722568	500	679	1028	1658	1222	17999	2.209e9	CSL6209-contigs.fa
+18.23e6	2278387	721913	500	679	1029	1660	1224	21356	2.21e9	CSL6209-scaffolds.fa
+```
+The statistics look weird: no real improvement between the different steps of assembly building: ~same number of pieces, ~similar N50, ~sum values. I feel like the coverage is too low to solve any conflict in the assembly...
+
 ## 2- Mugsy - not used
 
 With all the *de novo* assemblies from Hymenochirus/Pipa/Rhyno and the 2 references genomes *X. tropicalis* and *X. laevis*.
