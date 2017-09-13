@@ -3,6 +3,8 @@
 ### [*Pipa parva*](https://github.com/caro46/Pipa_parva/blob/master/assembly.md)
 
 ### *Rhinophrynus*
+
+#### SOAP de novo
 ```
 /work/cauretc/programs/SOAPdenovo2-src-r240/SOAPdenovo-63mer all -s /work/cauretc/2017_pipoidea/rhyno.config -K 43 -R -V -p 10 -F -o /work/cauretc/2017_pipoidea/Assemblies/SOAP_rhyno_genome_43mers 1>scaff_rhyno.log 2>scaff_rhyno.err
 #Segmentation fault
@@ -22,6 +24,11 @@ Again `Segmentation fault`.
 ```
 Tried to run the SOAP de novo assembly multiple times since the server is stable (3 times since the server fixation) using different values of kmers to try to use less memory but keep having `Segmentation fault`. 
 
+Since finally an `abyss` assembly went to an end (Sept.13), let's try again with `SOAPdenovo` using fewer processors on `Iqaluk`
+```
+/work/cauretc/programs/SOAPdenovo2-src-r240/SOAPdenovo-63mer all -s /work/cauretc/2017_pipoidea/rhyno.config -K 43 -R -V -p 6 -o /work/cauretc/2017_pipoidea/Assemblies/SOAP_rhyno_genome_43mers 1>ass_rhyno_43.log 2>ass_rhyno_43.err
+```
+#### Abyss
 Trying with Abyss:
 ```
 module unload intel mkl openmpi
@@ -140,7 +147,7 @@ n	n:500	L50	min	N80	N50	N20	E-size	max	sum	name
 18.24e6	2278791	722568	500	679	1028	1658	1222	17999	2.209e9	CSL6209-contigs.fa
 18.23e6	2278387	721913	500	679	1029	1660	1224	21356	2.21e9	CSL6209-scaffolds.fa
 ```
-The statistics look weird: no real improvement between the different steps of assembly building: ~same number of pieces, ~similar N50, ~sum values. I feel like the coverage is too low to solve any conflict in the assembly...
+The statistics look weird: no real improvement between the different steps of assembly building: ~same number of pieces, ~similar N50, ~sum values. I feel like the coverage is too low to solve any conflict in the assembly... I don't think we can actually get a better assembly.
 
 ## 2- Mugsy - not used
 
