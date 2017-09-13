@@ -182,7 +182,7 @@ Maybe considering MULAN or PECAN or TBA
 ```
 /usr/local/mauve/current/mauveAligner /4/caroline/tropicalis_genome/Xtropicalis_v9_repeatMasked_HARD_MASK.fa /4/caroline/laevis_genome/Xla.v91_repeatMasked_HARD_MASK.fa /4/caroline/2017_Pipoidea_Hiseq/Assemblies/Pipa_sex_specific/SOAP_pipa_genome_dad_43mers.scafSeq.gz /4/caroline/2017_Pipoidea_Hiseq/Assemblies/Pipa_sex_specific/SOAP_pipa_genome_mom_43mers.scafSeq.gz /home/caroline/hymeno/MUMMER_analysis/BJE3814-8.fa /home/caroline/hymeno/MUMMER_analysis/BJE3815-8.fa --output=/4/caroline/2017_Pipoidea_Hiseq/alignment/pipoidea.mauve --output-alignment=/4/caroline/2017_Pipoidea_Hiseq/alignment/pipoidea.alignment --scratch-path=/4/caroline/temp --alignment-output-dir /4/caroline/2017_Pipoidea_Hiseq/alignment --alignment-output-format=phylip
 ```
-
+Obtained an expected `Segmentation fault`(Sept13).
 ## 4- [Gblocks](http://molevol.cmima.csic.es/castresana/Gblocks/Gblocks_documentation.html)
 
 Version `0.91b` on info.
