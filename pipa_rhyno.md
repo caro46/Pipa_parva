@@ -189,6 +189,9 @@ Obtained an expected `Segmentation fault`(Sept13).
 ```
 muscle -in seqs.fa -out seqs.afa -maxiters 2
 ```
+
+**Notes:** Be carefull either `mauve` or `mugsy` seem to corrupt the input files for some reason (happened with `Xla.v91_repeatMasked_HARD_MASK.fa` and `SOAP_pipa_genome_mom_43mers.scafSeq.gz`). Hopefully had a copy on sharcnet. So for now we will only use the files containing scaffolds `=>500bp` obtained using command specified [here](https://github.com/caro46/Hymenochirus/blob/master/some_commands.Rmd).
+
 ## 4- [Gblocks](http://molevol.cmima.csic.es/castresana/Gblocks/Gblocks_documentation.html)
 
 Version `0.91b` on info.
