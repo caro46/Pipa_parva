@@ -312,3 +312,6 @@ Forward primer	ATGTAGTGGTTGCCTTGTGCC	Plus	21	3142	3162	61.16	52.38	2.00	1.00
 Reverse primer	GCTCCAGTCCCAAGTCATAGT	Minus	21	3866	3846	59.17	52.38	2.00	1.00
 Product length	725
 ```
+
+#### Amplifications
+Sent for sequencing on Sept.18 samples from the whole *Pipa* family except one individual for `mmp16_e9` (PCR 23/08), half of the family for `NCOA2_e2` (PCR 22/08, gradient from 09/08 and PCR 16/09) and `KCTD1_e4` (PCR 23/08, gradient from 09/08 and PCR 16/09). Should be ready for checking the quality and looking for the SNP inheritance pattern by Tomorrow (Sept.20). In case of bad sequences, should 1st try to amplify some individuals at a higher annealing temperature (+1 to increase the specificity). If good sequences and differences between males and females: need to amplify the 7 other individuals for `NCOA2` and `KCTD1`.
