@@ -315,3 +315,5 @@ Product length	725
 
 #### Amplifications
 Sent for sequencing on Sept.18 samples from the whole *Pipa* family except one individual for `mmp16_e9` (PCR 23/08), half of the family for `NCOA2_e2` (PCR 22/08, gradient from 09/08 and PCR 16/09) and `KCTD1_e4` (PCR 23/08, gradient from 09/08 and PCR 16/09). Should be ready for checking the quality and looking for the SNP inheritance pattern by Tomorrow (Sept.20). In case of bad sequences, should 1st try to amplify some individuals at a higher annealing temperature (+1 to increase the specificity). If good sequences and differences between males and females: need to amplify the 7 other individuals for `NCOA2` and `KCTD1`.
+
+The sequences came back on Sept.9. They look pretty good for `NCOA2` and `KCTD1`. 2 snps show up for `NCOA2`, 1 SNP for `KCTD1` (and an indel but the sequence from the forward is very clean around the SNP). For `mmp16`, I think we are in a region with multiple indels, additional investigations are necessary and nested primers would be necessary. For now I'll focus on amplifying the whole family (7 individuals left) for `NCOA2` and `KCTD1`.
