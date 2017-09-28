@@ -317,3 +317,13 @@ Product length	725
 Sent for sequencing on Sept.18 samples from the whole *Pipa* family except one individual for `mmp16_e9` (PCR 23/08), half of the family for `NCOA2_e2` (PCR 22/08, gradient from 09/08 and PCR 16/09) and `KCTD1_e4` (PCR 23/08, gradient from 09/08 and PCR 16/09). Should be ready for checking the quality and looking for the SNP inheritance pattern by Tomorrow (Sept.20). In case of bad sequences, should 1st try to amplify some individuals at a higher annealing temperature (+1 to increase the specificity). If good sequences and differences between males and females: need to amplify the 7 other individuals for `NCOA2` and `KCTD1`.
 
 The sequences came back on Sept.9. They look pretty good for `NCOA2` and `KCTD1`. 2 snps show up for `NCOA2`, 1 SNP for `KCTD1` (and an indel but the sequence from the forward is very clean around the SNP). For `mmp16`, I think we are in a region with multiple indels, additional investigations are necessary and nested primers would be necessary. For now I'll focus on amplifying the whole family (7 individuals left) for `NCOA2` and `KCTD1`.
+
+**28/09:** Ok so I actually think that for mmp16, the amplification was not specific enough. So 2 solutions: amplify at higher temperature (during the gradient we also had a band at 64.2); or having a nested primer to make sure we have a very good quality for our region of interest.
+```
+Primer pair 1
+	Sequence (5'->3')	Template strand	Length	Start	Stop	Tm	GC%	Self complementarity	Self 3' complementarity
+Forward primer	AGTCGCTCCCACTGTCATTTT	Plus	21	10742	10762	59.93	47.62	3.00	0.00
+Reverse primer	TTTTCCCATCAAACAAGGGGC	Minus	21	11208	11188	59.30	47.62	3.00	2.00
+Product length	467
+```
+Compared to other new reverse tested, this one has a closer Tm with the forward and not too big self complementarity values. The fact that the expected size is <500bp, it will most likely allow us to have both sequences (F&R) overlapping.
