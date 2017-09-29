@@ -327,3 +327,5 @@ Reverse primer	TTTTCCCATCAAACAAGGGGC	Minus	21	11208	11188	59.30	47.62	3.00	2.00
 Product length	467
 ```
 Compared to other new reverse tested, this one has a closer Tm with the forward and not too big self complementarity values. The fact that the expected size is <500bp, it will most likely allow us to have both sequences (F&R) overlapping.
+
+If BE agrees: I will amplify at a higher temperature and send for sequencing only the forward.
