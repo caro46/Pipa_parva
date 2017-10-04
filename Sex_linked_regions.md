@@ -329,3 +329,8 @@ Product length	467
 Compared to other new reverse tested, this one has a closer Tm with the forward and not too big self complementarity values. The fact that the expected size is <500bp, it will most likely allow us to have both sequences (F&R) overlapping.
 
 If BE agrees: I will amplify at a higher temperature and send for sequencing only the forward.
+
+**4/10: NCOA2/KCTD1:** Gel from 3/10 of PCR 2/10: Last individuals for `NCOA2` and `KCTD1` amplified (in addition to the ones from PCR 24/09) - need to be exosap + sequence reaction today
+
+**4/10: MMP16:** Gel from 3/10 of PCR 2/10 (PCR at 2 higher Tannealing 58 and 59): most individuals amplified and need to be clean + sequence reaction today
+
