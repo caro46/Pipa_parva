@@ -160,7 +160,9 @@ Mugsy is for closely related species which is not really our case.
 ```
 /usr/local/mugsy/mugsy -duplications 1 --directory /4/caroline/2017_Pipoidea_Hiseq/alignment --prefix Mugsy_alignment_pipid /4/caroline/tropicalis_genome/Xtropicalis_v9_repeatMasked_HARD_MASK.fa /4/caroline/laevis_genome/Xla.v91_repeatMasked_HARD_MASK1.fa /home/caroline/hymeno/MUMMER_analysis/BJE3814-8.fa /home/caroline/hymeno/MUMMER_analysis/BJE3815-8.fa /4/caroline/2017_Pipoidea_Hiseq/Assemblies/Pipa_sex_specific/SOAP_pipa_genome_dad_43mers.scafSeq.gz /4/caroline/2017_Pipoidea_Hiseq/Assemblies/Pipa_sex_specific/SOAP_pipa_genome_mom_43mers.scafSeq.gz /4/caroline/2017_Pipoidea_Hiseq/Assemblies/Rhynophrinus/abyss/CSL6209-8.fa.gz 
 ```
-
+```
+/usr/local/mugsy/mugsy -duplications 1 --directory /4/caroline/2017_Pipoidea_Hiseq/alignment --prefix Mugsy_alignment_pipid_trop_hym_pipa_rhyno /4/caroline/tropicalis_genome/Xtropicalis_v9_repeatMasked_HARD_MASK.fa /home/caroline/hymeno/MUMMER_analysis/BJE3814-8.fa /4/caroline/2017_Pipoidea_Hiseq/Assemblies/Pipa_sex_specific/SOAP_pipa_genome_mom /4/caroline/2017_Pipoidea_Hiseq/Assemblies/Rhynophrinus/abyss/CSL6209-8_500bp.fa.gz
+```
 ## 3- [Mauve](http://darlinglab.org/mauve/user-guide/introduction.html) and [mafft](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC135756/)
 
 Mauve (`2.3.1` on info): local multiple alignments, *identifies conserved genomic regions, rearrangements and inversions in conserved regions, and the exact sequence breakpoints of such rearrangements across multiple genomes*, large-scale evolutionary events.
@@ -186,6 +188,12 @@ Maybe considering MULAN or PECAN or TBA
 /usr/local/mauve/current/mauveAligner /4/caroline/tropicalis_genome/Xtropicalis_v9_repeatMasked_HARD_MASK.fa /4/caroline/laevis_genome/Xla.v91_repeatMasked_HARD_MASK1.fa /4/caroline/2017_Pipoidea_Hiseq/Assemblies/Pipa_sex_specific/SOAP_pipa_genome_dad_43mers.scafSeq.gz /4/caroline/2017_Pipoidea_Hiseq/Assemblies/Pipa_sex_specific/SOAP_pipa_genome_mom_43mers.scafSeq.gz /home/caroline/hymeno/MUMMER_analysis/BJE3814-8.fa /home/caroline/hymeno/MUMMER_analysis/BJE3815-8.fa --output=/4/caroline/2017_Pipoidea_Hiseq/alignment/pipoidea.mauve --output-alignment=/4/caroline/2017_Pipoidea_Hiseq/alignment/pipoidea.alignment --scratch-path=/4/caroline/temp --alignment-output-dir /4/caroline/2017_Pipoidea_Hiseq/alignment --alignment-output-format=phylip
 ```
 Obtained an expected `Segmentation fault`(Sept13).
+
+Only females
+```
+/usr/local/mauve/current/mauveAligner /4/caroline/tropicalis_genome/Xtropicalis_v9_repeatMasked_HARD_MASK.fa /4/caroline/2017_Pipoidea_Hiseq/Assemblies/Pipa_sex_specific/SOAP_pipa_genome_mom_43mers.scafSeq.gz /home/caroline/hymeno/MUMMER_analysis/BJE3814-8_500bp.fa /4/caroline/2017_Pipoidea_Hiseq/Assemblies/Rhynophrinus/abyss/CSL6209-8.fa.gz --output=/4/caroline/2017_Pipoidea_Hiseq/alignment/pipoidea.mauve --output-alignment=/4/caroline/2017_Pipoidea_Hiseq/alignment/pipoidea.alignment --alignment-output-format=phylip --scratch-path=/4/caroline/temp --alignment-output-dir /4/caroline/2017_Pipoidea_Hiseq/alignment
+```
+`Segmentation fault`
 ```
 muscle -in seqs.fa -out seqs.afa -maxiters 2
 ```
