@@ -334,3 +334,4 @@ If BE agrees: I will amplify at a higher temperature and send for sequencing onl
 
 **4/10: MMP16:** Gel from 3/10 of PCR 2/10 (PCR at 2 higher Tannealing 58 and 59): most individuals amplified and need to be clean + sequence reaction today
 
+**3/10:** 
