@@ -334,4 +334,13 @@ If BE agrees: I will amplify at a higher temperature and send for sequencing onl
 
 **4/10: MMP16:** Gel from 3/10 of PCR 2/10 (PCR at 2 higher Tannealing 58 and 59): most individuals amplified and need to be clean + sequence reaction today
 
-**3/10:** 
+**3/10: Summary of PCR**
+
+##### NCOA2_e2 (`scaffold1250`, `position19402`)
+All the individuals except `BJE4296` and `BJE4300` (2 sons) amplified and got OK sequences. Mother: G/G, father: A/G, 5 sons: A/G, 5 daughters: G/G.
+
+##### KCTD1_e4 (`scaffold68613`, `position3284`)
+All the individuals amplified and got OK sequences. Mother: C/C, father: C/T, 7 sons: C/T, 5 daughters: C/C.
+
+##### mmp16_e9 (`scaffold177758`, `position10973`)
+All the individuals except `BJE4308` and `BJE4309` (1 son, 1 daughter) amplified and got OK sequences. Mother: G/G, father: A/G, 6 sons: A/G, 4 daughters: G/G.
