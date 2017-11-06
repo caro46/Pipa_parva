@@ -337,7 +337,7 @@ If BE agrees: I will amplify at a higher temperature and send for sequencing onl
 **3/10: Summary of PCR**
 
 ##### NCOA2_e2 (`scaffold1250`, `position19402`)
-All the individuals except `BJE4296` and `BJE4300` (2 sons) amplified and got OK sequences. Mother: G/G, father: A/G, 5 sons: A/G, 5 daughters: G/G.
+All the individuals except `BJE4300` (son) amplified and got OK sequences. Mother: G/G, father: A/G, 6 sons: A/G, 5 daughters: G/G.
 
 ##### KCTD1_e4 (`scaffold68613`, `position3284`)
 All the individuals amplified and got OK sequences. Mother: C/C, father: C/T, 7 sons: C/T, 5 daughters: C/C.
