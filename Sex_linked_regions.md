@@ -339,8 +339,12 @@ If BE agrees: I will amplify at a higher temperature and send for sequencing onl
 ##### NCOA2_e2 (`scaffold1250`, `position19402`)
 All the individuals except `BJE4300` (son) amplified and got OK sequences. Mother: G/G, father: A/G, 6 sons: A/G, 5 daughters: G/G.
 
+29/03 - update: `BJE4300` sequenced: A/G
+
 ##### KCTD1_e4 (`scaffold68613`, `position3284`)
 All the individuals amplified and got OK sequences. Mother: C/C, father: C/T, 7 sons: C/T, 5 daughters: C/C.
 
 ##### mmp16_e9 (`scaffold177758`, `position10973`)
 All the individuals except `BJE4308` and `BJE4309` (1 son, 1 daughter) amplified and got OK sequences. Mother: G/G, father: A/G, 6 sons: A/G, 4 daughters: G/G.
+
+29/03 - update: `BJE4308`: A/G, `BJE4309` G/G.
