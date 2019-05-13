@@ -1,8 +1,19 @@
+# Genbank submission
+
+`Sequin` is [not used anymore](https://www.ncbi.nlm.nih.gov/Sequin/): 
+
+```
+ NCBI is phasing out support of the Sequin submission tool. Please submit your data using BankIt, Submission Portal or tbl2asn. See Submission Tools for details on the appropriate tool 
+```
+Since we have multiple sequences we are using `tbl2asn` which is a bit similar to Sequin. It uses a [Template file](https://submit.ncbi.nlm.nih.gov/genbank/template/submission/), Nucleotide sequence data in FASTA format (suffix .fsa), Feature Table (suffix .tbl) for the annotation. 
+
+
 # tbl2asn
 
 
+## Preparing the fasta file
 
-# Renaming the files
+### Renaming the files
 
 `renaming_fasta_from_table.pl`
 ```perl
@@ -104,6 +115,27 @@ close OUTFILE;
 print "Done with output file \n";
 
 ```
+
+### Format for the annotation table
+
+Example from the [NCBI website](https://www.ncbi.nlm.nih.gov/genbank/tbl2asn2/#tbl)
+
+For incomplete region use "<" ">". Tab are used to separate the different part of the annotation.
+```
+>Features SeqID table_name
+
+The SeqID must match the nucleotide sequence SeqID in the corresponding .fsa file.
+
+Example Feature Table
+
+>Feature Sc_16 Table1
+69	543	gene
+			gene	sde3p
+69	543	CDS
+			product SDE3P
+			protein_id	WS1030
+```
+
 
 `geneious_to_tbl.pl`
 ```perl
@@ -232,14 +264,23 @@ print "Done with output file \n";
 
 ```
 
-# Batch
+## Batch submission file
 
 ```
 ./mac.tbl2asn -t /Users/evanslab/Documents/caroline/Publi_pipid_SC/NCBI/submission/template.sbt -p /Users/evanslab/Documents/caroline/Publi_pipid_SC/NCBI/submission/ -r /Users/evanslab/Documents/caroline/Publi_pipid_SC/NCBI/submission/ -V v -a s
 ```
 
-# Alignment
+## Alignment submission file
 
 ```
 ./mac.tbl2asn -t /Users/evanslab/Documents/caroline/Publi_pipid_SC/NCBI/submission/template.sbt -p /Users/evanslab/Documents/caroline/Publi_pipid_SC/NCBI/submission/alignments/ -r /Users/evanslab/Documents/caroline/Publi_pipid_SC/NCBI/submission/alignments/ -V v -a l1
 ```
+
+### Issue with the last 2 alignments DMW/DMRT1
+
+```
+ERROR: valid [SEQ_DESCR.InconsistentBioSources] Population set contains inconsistent organisms. BIOSEQ-SET: pop-set: 
+WARNING: valid [SEQ_FEAT.PartialProblem] PartialLocation: 3' partial is not at stop AND is not at consensus splice site FEATURE: CDS:
+```
+
+
