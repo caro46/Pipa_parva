@@ -278,6 +278,8 @@ print "Done with output file \n";
 
 ### Issue with the last 2 alignments DMW/DMRT1
 
+From the `.val` file:
+
 ```
 ERROR: valid [SEQ_DESCR.InconsistentBioSources] Population set contains inconsistent organisms. BIOSEQ-SET: pop-set: 
 WARNING: valid [SEQ_FEAT.PartialProblem] PartialLocation: 3' partial is not at stop AND is not at consensus splice site FEATURE: CDS:
