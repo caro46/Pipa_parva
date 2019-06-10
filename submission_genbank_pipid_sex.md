@@ -264,6 +264,8 @@ print "Done with output file \n";
 
 ```
 
+The `.src` annotation file was manually corrected for incomplete annotation, specific to a couple of sequences each time.
+
 ## Batch submission file
 
 ```
@@ -284,5 +286,11 @@ From the `.val` file:
 ERROR: valid [SEQ_DESCR.InconsistentBioSources] Population set contains inconsistent organisms. BIOSEQ-SET: pop-set: 
 WARNING: valid [SEQ_FEAT.PartialProblem] PartialLocation: 3' partial is not at stop AND is not at consensus splice site FEATURE: CDS:
 ```
+Since our alignments contain sequences from different species for at least 2 loci (paralogs of dmrt1 and dmw), the alignment is submitted as "alignment bacth" with `-a l`. We specified the date of release using `-H`. `Congo Republic` needed to be corrected as `Republic of the Congo` to get rid of the `BadCountryCode`. I checked for issue linked to the warning `PartialLocation` but the `.sqn` file looks fine with the appropriate incomplete annotation, submitted with the warning since the translation of the CDS was good, no issue noted by the genbank staff. 
 
+Had also an issue with the `modifiers`. I specified all the modifiers we wanted in the fasta header of the sequences. It worked fine for batch submission when it is not an alignment. However when alignment is specified some modifiers (`isolate` and `Specimen-voucher`) disappear from the produced `.sqn` file even though present in the fasta file. After contacting the genbank staff, it was suggested to create a create a [source modifiers table](https://www.ncbi.nlm.nih.gov/WebSub/html/help/genbank-source-table.html) and includes it in the "alignments" directory. This fixed the issue. 
 
+The specific command performed for the "dmrt1/dmw" capture alignments is:
+```
+./mac.tbl2asn -t /Users/evanslab/Documents/caroline/Publi_pipid_SC/NCBI/submission/template.sbt -p /Users/evanslab/Documents/caroline/Publi_pipid_SC/NCBI/submission/alignments/ -r /Users/evanslab/Documents/caroline/Publi_pipid_SC/NCBI/submission/alignments/ -V vb -a l -H 09/05/2019
+```
